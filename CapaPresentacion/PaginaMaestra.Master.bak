@@ -1,0 +1,298 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="Plantilla.PaginaMaestra" %>
+
+<%@ Register Assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>Sistemas</title>
+    <!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+    <link href="HojasEstilos/Plantilla/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- SIMPLE LINE ICONS-->
+    <link href="HojasEstilos/Plantilla/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+     <!-- ANIMATE.CSS-->
+    <link href="HojasEstilos/Plantilla/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="HojasEstilos/Plantilla/vendor/spinkit/css/spinkit.css" rel="stylesheet"/>
+    <!--DATA TABLES.CSS-->
+    <%--<link href="HojasEstilos/Plantilla/vendor/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="HojasEstilos/Plantilla/vendor/dataTables.fontAwesome/index.css" rel="stylesheet" />
+    <link href="HojasEstilos/Plantilla/vendor/datatables/media/css/tablesaw.css" rel="stylesheet" />--%>
+    
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link href="HojasEstilos/Plantilla/bootstrap.css" rel="stylesheet" />
+    <!-- =============== APP STYLES ===============-->
+    <link href="HojasEstilos/Plantilla/app.css" rel="stylesheet" />
+    <!--Tema.CSS-->
+    <link href="HojasEstilos/Plantilla/theme.css?r=1" rel="stylesheet" />
+    <!--Notificaciones.CSS-->
+    <link href="HojasEstilos/Plantilla/notificacion.css" rel="stylesheet" />
+   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body class="layout-fixed">
+    <form id="form1" runat="server" style="height:100%">      
+        <asp:ScriptManager ID="ScriptManager1" runat="server" OnAsyncPostBackError="ScriptManager1_AsyncPostBackError">
+            <Services>
+                <asp:ServiceReference Path="~/Servicios/ServicioSistema.asmx" />
+            </Services>
+            <Scripts>        
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/modernizr/modernizr.custom.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/jquery/dist/jquery.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/bootstrap/dist/js/bootstrap.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/jQuery-Storage-API/jquery.storageapi.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/jquery.easing/js/jquery.easing.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/animo.js/animo.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/screenfull/dist/screenfull.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/jquery-localize-i18n/dist/jquery.localize.js" />
+                <%--<asp:ScriptReference Path="~/Scripts/Plantilla/vendor/datatables/media/js/jquery.dataTables.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/vendor/datatables/media/js/dataTables.bootstrap.js" />
+                <asp:ScriptReference Path="~Scripts/Plantilla/vendor/datatables/media/js/tablesaw.js"/>--%>
+                <asp:ScriptReference Path="~/Scripts/Plantilla/jquery.blockUI.js"/>
+                <asp:ScriptReference Path="~/Scripts/Plantilla/PaginaMaestra.js?q=1" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/Token.js?r=1" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/app.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/notificacion.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/jquery.noty.packaged.js" />
+                <asp:ScriptReference Path="~/Scripts/Plantilla/Mensajes.js" />
+                <asp:ScriptReference Path="http://187.157.24.221/appcuenta/Scripts/jquery.signalR-1.2.1.js" />      
+            </Scripts>
+        </asp:ScriptManager>
+        <script type="text/javascript">
+           
+        </script>
+        <asp:HiddenField ID="hdfIdSSO" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdfNumEmpleado" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdfNombreCompleto" runat="server" ClientIDMode="Static" />
+        <div class="wrapper">        
+            <!-- top navbar-->
+            <header class="topnavbar-wrapper">
+                <!-- Inicio Top Navbar-->
+                <nav role="navigation" class="navbar topnavbar">
+                    <!-- Inicio navbar header-->
+                    <div class="navbar-header">
+                        <a href="#/" class="navbar-brand">
+                            <div class="brand-logo">
+                                <img src="../Imagenes/LogoGeneral.png" class="img-responsive" />
+                            </div>
+                            <div class="brand-logo-collapsed">
+                                <img src="../Imagenes/LogoGeneralSimple.png" alt="App Logo" class="img-responsive" />
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Fin navbar header-->
+                    <!-- Inicio Nav wrapper-->
+                    <div class="nav-wrapper">
+                        <!-- Inicio Barra de Navegación Izquierdo-->
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <!-- Boton para colapsar el "sidebar" derecho. Solo visible en tabletas y escritorios-->
+                                <a href="#" data-trigger-resize="" data-toggle-state="aside-collapsed" class="hidden-xs">
+                                    <em class="fa fa-navicon"></em>
+                                </a>
+                                <!-- Boton para mostrar/ocultar el "sidebar" en mobiles.-->
+                                <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                                    <em class="fa fa-navicon"></em>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tooltip" data-placement="bottom" title="INICIO" href="../Default.aspx" target="_self">
+                                    <em class="fa icon-home"></em>
+                                </a>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkSalir" runat="server" data-toggle="tooltip" data-placement="bottom" OnClick="lnkSalir_Click" ToolTip="Salir">
+                                    <em class="icon-power"></em>
+                                </asp:LinkButton>                          
+                            </li>                           
+                        </ul>
+
+
+                        <!-- FIN Barra de Navegación Izquierdo-->
+                        <!-- INICIO Barra de Navegación Derecho-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="visible-lg">
+                                <a href="#" data-toggle-fullscreen="" title="Pantalla Completa" data-toggle="tooltip" data-placement="bottom">
+                                    <em class="fa fa-expand"></em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://correo.campeche.gob.mx" target="_blank" title="Correo Campeche" data-toggle="tooltip" data-placement="bottom">
+                                    <em class="fa fa-envelope"></em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.campeche.gob.mx/" target="_blank" title="Portal Campeche" data-toggle="tooltip" data-placement="bottom">
+                                    <em class="fa fa-globe"></em>
+                                </a>
+                            </li>
+                            <li id="notis" class="dropdown dropdown-list">
+                           
+                                <a href="#" data-toggle="dropdown" title="Notificaciones">
+                                    <span title="Notificaciones" data-toggle="tooltip" data-placement="bottom">
+                                    <em class="fa fa-bell"></em>
+                                    </span>
+                                    <div id="total-notis" class="label label-danger n-total">0</div>                                    
+                                </a>
+                                <ul class="dropdown-menu animated flipInX">
+                                    <li>
+                                        <div id="lstNotificaciones" class="list-group">
+                                            <div class="nuevos-notis">
+                                            </div>
+                                            <a id="mostrarnotis" href="#" class="list-group-item">
+                                                <small>Más Notificaciones</small>
+                                                <span id="numNotificacionestotal" class="label label-danger pull-right"></span>
+                                            </a>
+                                        
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>                             
+                          <%--  <li id="Alertas">
+                                <a href="#" title="Alertas">
+                                    <span title="Alertas" data-toggle="tooltip" data-placement="bottom">
+                                        <em class="fa fa-warning"></em>
+                                    </span>
+                                </a>
+                            </li>--%>
+                         <%--   <li>
+                                <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                                    <span title="Más" data-toggle="tooltip" data-placement="bottom">
+                                        <em class="fa fa-book"></em>
+                                    </span>
+                                </a>
+                            </li>--%>
+                        </ul>
+                        <!-- FIN Barra de Navegación Derecho-->
+                    </div>
+                    <!-- Fin Nav wrapper-->
+                </nav>
+                <!-- Fin Top Navbar-->
+            </header>
+              <!-- Menú lateral oculto-->
+      <aside class="offsidebar hide">
+         <!-- Inicio Menú lateral Derecho-->
+         <nav>
+            <div role="tabpanel">
+               <!-- Nav tabs-->
+               <ul role="tablist" class="nav nav-tabs nav-justified">
+                  <li role="presentation" class="active">
+                     <a href="#validador-doc" aria-controls="app-settings" role="tab" data-toggle="tab">                     
+                     </a>
+                  </li>              
+               </ul>
+               <!-- Tab panes-->
+               <div class="tab-content">
+                  <div id="validador-doc" role="tabpanel" class="tab-pane fade in active">
+                     <h3 class="text-center text-thin">Validador de Documentos</h3>                   
+                     <div class="p">                                            
+                     </div>
+                  </div>                 
+               </div>
+            </div>
+         </nav>
+         <!-- Fin Menú lateral Derecho-->
+          </aside>
+              <aside class="aside">
+         <!-- INICIO Menu lateral Izquierdo-->
+         <div class="aside-inner">
+            <nav data-sidebar-anyclick-close="" class="sidebar show-scrollbar">
+               <!-- INICIO Menú lateral nav-->
+               <ul id="menu" class="nav">
+                  <!-- INICIO Informacion de Usuario-->
+                  <li class="has-user-block">
+                     <div id="user-block">
+                        <div class="item user-block">                          
+                           <div class="user-block-picture">                            
+                               <div class="user-block-status">                                
+                                   <dx:ASPxBinaryImage ID="imgPerfil" runat="server" Width="60px" Height="60px" CssClass="img-thumbnail img-circle">
+                                       <EmptyImage Url="~/Imagenes/Perfil.png" Height="60px" Width="60px"></EmptyImage>
+                                   </dx:ASPxBinaryImage>     
+                                 <div class="circle circle-success circle-lg"></div>
+                              </div>
+                           </div>                          
+                           <div class="user-block-info">
+                              <span class="user-block-name">
+                                  <asp:Label ID="lblNombreCorto" runat="server" CssClass="user-block-name"  ClientIDMode="Static"></asp:Label>
+                                  <asp:Label ID="lblPuesto" runat="server" CssClass="user-block-role"  ClientIDMode="Static"></asp:Label>
+                              </span>
+                                                   
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <!-- FIN Informacion Usuario-->
+                  <li class="nav-heading">
+                     <span data-localize="sidebar.heading.HEADER">Menú</span>
+                  </li>
+               </ul>
+               <!-- END Menú lateral nav-->
+            </nav>
+         </div>
+         <!-- FIN Menú lateral izquierdo-->
+      </aside>
+           <section>
+               <div class="content-wrapper">
+                   <div class="content-heading">
+                       <div class="pull-right ">
+                           <div class="nombresistema">
+                               <div class="logo" style="font-size: 1.4em; ">
+                                   <%-- Icono sistema --%>
+                                   <em class="fa fa-cube"></em>
+                               </div>
+                               <div class="nombrelogo">
+                                   <%-- Nombre sistema --%>
+                                   <em class="fa fa-cube" style="font-size: 1.4em;"></em>&nbsp Sistema
+                               </div>
+                           </div>
+                       </div>
+                       <asp:ContentPlaceHolder ID="Titulo" runat="server"></asp:ContentPlaceHolder>
+                   </div>
+                   <div class="row acciones">
+                       <div class="pull-right" >
+                             <asp:ContentPlaceHolder ID="Acciones" runat="server"></asp:ContentPlaceHolder>
+                       </div>
+                   </div>
+                   <div class="row">                       
+                        <asp:ContentPlaceHolder ID="Contenido" runat="server">
+                    </asp:ContentPlaceHolder>
+                   </div>
+               </div>
+           </section>
+            <footer>     
+                  <div class="pull-left">
+                    <div>
+                    <div class="nombrelogo">Secretaría de Administración e Innovación Gubernamental</div>
+                    <div class="logo">SAIG</div>
+                    </div>
+                    <div style="float:left">
+                        <a title="Ubicación" class="links" onclick="window.open('http://www.apps.campeche.gob.mx/MapaSAIG.htm', 'Mapa', 'status=false, toolbar=false, location=false, width=617, height=417')" style="cursor: pointer;">
+                        <em class="fa icon-location-pin text-info" style="font-size: 1.4em;"></em>
+                     </a>
+                    &nbsp
+                    <a title="Facebook" class="links" target="_blank" onclick="" href="https://www.facebook.com/Saig-Campeche-1710726289190075/">
+                        <em class="fa fa-facebook-square fa-1_6x text-primary"></em>
+                    </a>
+                    &nbsp
+                    <a title="Twitter" class="links" target="_blank" onclick="" href="https://twitter.com/saigcampeche">
+                        <em class="fa fa-twitter fa-1_6x text-info"></em>
+                    </a>
+                    </div>                 
+                </div>
+                <div class="pull-right">
+                    <div class="nombresistema">
+                        <div class="nombrelogo">
+                            <img src="Imagenes/crecerengrande.png" style="height:55px" />
+                        </div>
+                        <div class="logo">
+                            <img src="Imagenes/logo(2016).png" style="height:55px"/>
+                        </div>
+                    </div>           
+                </div>  
+            </footer>
+        </div>
+        <asp:ContentPlaceHolder ID="ModalPage" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

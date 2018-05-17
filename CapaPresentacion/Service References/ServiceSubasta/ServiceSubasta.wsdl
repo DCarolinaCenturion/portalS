@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceSubasta" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+      <xsd:import schemaLocation="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceSubasta_obtenerSubastaProceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerSubastaProceso" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerSubastaProceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerSubastaProcesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerListaLotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerListaLotes" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerListaLotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerListaLotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerDetalleLote_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerDetalleLote" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerDetalleLote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerDetalleLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerFotosBien_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerFotosBien" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerFotosBien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerFotosBienResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerFechaSubasta_InputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerFechaSubasta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceSubasta_obtenerFechaSubasta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obtenerFechaSubastaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceSubasta">
+    <wsdl:operation name="obtenerSubastaProceso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerSubastaProceso" message="tns:IServiceSubasta_obtenerSubastaProceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerSubastaProcesoResponse" message="tns:IServiceSubasta_obtenerSubastaProceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaLotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerListaLotes" message="tns:IServiceSubasta_obtenerListaLotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerListaLotesResponse" message="tns:IServiceSubasta_obtenerListaLotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDetalleLote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerDetalleLote" message="tns:IServiceSubasta_obtenerDetalleLote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerDetalleLoteResponse" message="tns:IServiceSubasta_obtenerDetalleLote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFotosBien">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerFotosBien" message="tns:IServiceSubasta_obtenerFotosBien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerFotosBienResponse" message="tns:IServiceSubasta_obtenerFotosBien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFechaSubasta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerFechaSubasta" message="tns:IServiceSubasta_obtenerFechaSubasta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSubasta/obtenerFechaSubastaResponse" message="tns:IServiceSubasta_obtenerFechaSubasta_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceSubasta" type="tns:IServiceSubasta">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerSubastaProceso">
+      <soap:operation soapAction="http://tempuri.org/IServiceSubasta/obtenerSubastaProceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerListaLotes">
+      <soap:operation soapAction="http://tempuri.org/IServiceSubasta/obtenerListaLotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerDetalleLote">
+      <soap:operation soapAction="http://tempuri.org/IServiceSubasta/obtenerDetalleLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFotosBien">
+      <soap:operation soapAction="http://tempuri.org/IServiceSubasta/obtenerFotosBien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerFechaSubasta">
+      <soap:operation soapAction="http://tempuri.org/IServiceSubasta/obtenerFechaSubasta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceSubasta">
+    <wsdl:port name="BasicHttpBinding_IServiceSubasta" binding="tns:BasicHttpBinding_IServiceSubasta">
+      <soap:address location="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

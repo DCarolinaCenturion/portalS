@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AccesoDatos.dll">
+      <publishTime>02/26/2018 15:59:51</publishTime>
+    </File>
+    <File Include="bin/Entidades.dll">
+      <publishTime>02/26/2018 15:59:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/26/2018 17:46:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/26/2018 17:46:16</publishTime>
+    </File>
+    <File Include="bin/es/EntityFramework.resources.dll">
+      <publishTime>01/26/2018 17:46:27</publishTime>
+    </File>
+    <File Include="bin/es/EntityFramework.SqlServer.resources.dll">
+      <publishTime>01/26/2018 17:46:27</publishTime>
+    </File>
+    <File Include="bin/WcfServicePortalSubastas.dll">
+      <publishTime>03/05/2018 08:22:13</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/08/2018 15:43:17</publishTime>
+    </File>
+    <File Include="ServicePortalSubastas.svc">
+      <publishTime>02/07/2018 09:11:36</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/05/2018 08:22:14</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

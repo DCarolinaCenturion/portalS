@@ -1,0 +1,144 @@
+﻿  .form-control
+        {
+            border: none;
+            border-bottom: 1px solid #bdbdbd;
+            border-radius: 0px;
+        }
+        label
+        {
+           color:#76838f;
+        }
+        .row
+        {
+
+            margin-left:10px;
+        }
+
+
+          /*estilos por wizard*/
+        #Registro section
+        {
+
+            position:relative;
+        }
+
+         .wizard.vertical > .content 
+         {
+             background:rgba(0,0,0,.5);
+             position:relative;
+             padding:20px;
+             /*transform:translate(-4%);*/
+             /*width:700px;*/
+         }
+        h4 
+        {
+            color:white;
+        }
+
+       .wizard.vertical> .content > .body label
+        {
+            color:white;
+        }
+        .wizard.vertical > .content > .body input[type="text"],
+         .wizard.vertical> .content > .body input[type="email"],
+         .wizard.vertical > .content > .body input[type="tel"]
+
+        {
+            border:none;
+            border-bottom: 1px solid #fff;
+            background:transparent;
+            outline:none;
+            
+            color:#fff;
+        }
+        .wizard.vertical > .content > .body 
+        {
+            padding:0px;
+        }
+       .wizard.vertical > .content > .body ul
+        {
+           display:block;
+           list-style: none ! important;
+        
+        }
+      .wizard.vertical > .content > .body ul li.active
+        {
+            border-style:none;
+            border-radius:6px;
+        }
+
+       .wizard.vertical > .content > .body ul li.active a
+        {
+            border-style:none;
+           
+           
+        }
+
+      
+        @media only screen and (max-width: 768px)
+        {
+
+             /* First hide all steps from the begining on */
+        .wizard.vertical > .steps li
+        {
+        display: none;
+        width:300px;
+        }
+
+        /* Then just re-show only the current step */
+        .wizard.vertical > .steps li.current 
+        {
+            display: block;
+        }
+      
+        }
+        .above-nav{
+        height: 100px;
+        background-color: #A1887F;
+      
+         }
+
+          p {
+          color:#fff;
+          line-height: 100px;
+          font-size:20px;
+          padding: 0;
+        }
+
+        .affix {
+            top: 0px;
+            width:100%;
+        }
+
+        .wizard 
+        {
+          position:absolute;
+          top:10%;
+          /*left:50%;*/
+            
+            /*padding:15px;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);*/*/
+        }
+        .wizard.vertical > .actions
+            {
+                transform:translate(-30%);
+            }
+
+
+        .wizard > .steps  a
+        {
+                border-radius:6px;
+        }
+        legend
+        {
+            color:white;
+        }
+        .panel
+        {
+            border:none;
+        }
+        
+
+         

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8f016d58-7f7a-445f-8443-1fda93dd9b5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.19.2.102/WCFPortalSubastas/ServicePortalSubastas.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicePortalSubastas.wsdl" MetadataType="Wsdl" ID="bd16634b-6d6b-4bc1-8fbd-75f045a6880e" SourceId="1" SourceUrl="http://172.19.2.102/WCFPortalSubastas/ServicePortalSubastas.svc?wsdl" />
+    <MetadataFile FileName="ServicePortalSubastas.xsd" MetadataType="Schema" ID="ade42101-b7cb-4755-b07f-a77d53f3c047" SourceId="1" SourceUrl="http://172.19.2.102/WCFPortalSubastas/ServicePortalSubastas.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicePortalSubastas1.xsd" MetadataType="Schema" ID="e4fdc021-0f3c-4ab0-bdcf-98c2074af207" SourceId="1" SourceUrl="http://172.19.2.102/WCFPortalSubastas/ServicePortalSubastas.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicePortalSubastas2.xsd" MetadataType="Schema" ID="0df7ea80-350b-4cf4-9f9b-eb8e1cc09a6e" SourceId="1" SourceUrl="http://172.19.2.102/WCFPortalSubastas/ServicePortalSubastas.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicePortalSubastas.disco" MetadataType="Disco" ID="3ef12749-aac3-4604-8213-3f0a3525032d" SourceId="1" SourceUrl="http://172.19.2.102/WCFPortalSubastas/ServicePortalSubastas.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

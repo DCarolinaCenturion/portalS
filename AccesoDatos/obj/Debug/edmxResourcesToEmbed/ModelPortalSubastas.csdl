@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDMBIIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comprador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Tipo" Type="Int32" Nullable="false" />
+    <Property Name="Id_Empresa" Type="Int32" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CP" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK__Comprador__Id_Em__3C34F16F" FromRole="Comprador" ToRole="Empresa" />
+    <NavigationProperty Name="Tipo_Comprador" Relationship="Self.FK__Comprador__Id_Ti__014935CB" FromRole="Comprador" ToRole="Tipo_Comprador" />
+    <NavigationProperty Name="Comprobante_Pago" Relationship="Self.FK__Comproban__Id_Co__2A4B4B5E" FromRole="Comprador" ToRole="Comprobante_Pago" />
+    <NavigationProperty Name="Login" Relationship="Self.FK__Login__Id_Compra__276EDEB3" FromRole="Comprador" ToRole="Login" />
+    <NavigationProperty Name="Puja" Relationship="Self.FK__Puja__Id_Comprad__09DE7BCC" FromRole="Comprador" ToRole="Puja" />
+    <NavigationProperty Name="Puja1" Relationship="Self.FK__Puja__Id_Comprad__182C9B23" FromRole="Comprador" ToRole="Puja" />
+    <NavigationProperty Name="Seguimiento_Estado_Comprador" Relationship="Self.FK__Seguimien__Id_Co__07020F21" FromRole="Comprador" ToRole="Seguimiento_Estado_Comprador" />
+    <NavigationProperty Name="Seguimiento_Estado_Comprador1" Relationship="Self.FK__Seguimien__Id_Co__0AD2A005" FromRole="Comprador" ToRole="Seguimiento_Estado_Comprador" />
+  </EntityType>
+  <EntityType Name="Comprobante_Pago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Comprador" Type="Int32" Nullable="false" />
+    <Property Name="Ruta" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Subasta" Type="Int32" Nullable="false" />
+    <Property Name="NombreSubasta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Comprador" Relationship="Self.FK__Comproban__Id_Co__2A4B4B5E" FromRole="Comprobante_Pago" ToRole="Comprador" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreEmpresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Localidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comprador" Relationship="Self.FK__Comprador__Id_Em__3C34F16F" FromRole="Empresa" ToRole="Comprador" />
+    <NavigationProperty Name="Localidad" Relationship="Self.FK__Empresa__Id_Loca__45BE5BA9" FromRole="Empresa" ToRole="Localidad" />
+  </EntityType>
+  <EntityType Name="Estado_Comprador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Seguimiento_Estado_Comprador" Relationship="Self.FK__Seguimien__Id_Es__060DEAE8" FromRole="Estado_Comprador" ToRole="Seguimiento_Estado_Comprador" />
+  </EntityType>
+  <EntityType Name="Estado_Republica">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Municipio" Relationship="Self.FK__Municipio__Id_Es__03F0984C" FromRole="Estado_Republica" ToRole="Municipio" />
+  </EntityType>
+  <EntityType Name="Localidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Municipio" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK__Empresa__Id_Loca__45BE5BA9" FromRole="Localidad" ToRole="Empresa" />
+    <NavigationProperty Name="Municipio" Relationship="Self.FK__Localidad__Id_Mu__04E4BC85" FromRole="Localidad" ToRole="Municipio" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Comprador" Type="Int32" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Comprador" Relationship="Self.FK__Login__Id_Compra__276EDEB3" FromRole="Login" ToRole="Comprador" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estado_Republica" Relationship="Self.FK__Municipio__Id_Es__03F0984C" FromRole="Municipio" ToRole="Estado_Republica" />
+    <NavigationProperty Name="Localidad" Relationship="Self.FK__Localidad__Id_Mu__04E4BC85" FromRole="Municipio" ToRole="Localidad" />
+  </EntityType>
+  <EntityType Name="Puja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Comprador" Type="Int32" Nullable="false" />
+    <Property Name="Id_Lote" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comprador" Relationship="Self.FK__Puja__Id_Comprad__09DE7BCC" FromRole="Puja" ToRole="Comprador" />
+    <NavigationProperty Name="Comprador1" Relationship="Self.FK__Puja__Id_Comprad__182C9B23" FromRole="Puja" ToRole="Comprador" />
+    <NavigationProperty Name="Seguimiento_Puja" Relationship="Self.FK__Seguimien__Id_Pu__1ED998B2" FromRole="Puja" ToRole="Seguimiento_Puja" />
+    <NavigationProperty Name="Seguimiento_Puja1" Relationship="Self.FK__Seguimien__Id_Pu__1FCDBCEB" FromRole="Puja" ToRole="Seguimiento_Puja" />
+  </EntityType>
+  <EntityType Name="Seguimiento_Estado_Comprador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Subasta" Type="Int32" Nullable="false" />
+    <Property Name="Id_Estado_Comprador" Type="Int32" Nullable="false" />
+    <Property Name="Id_Comprador" Type="Int32" Nullable="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Comprador" Relationship="Self.FK__Seguimien__Id_Co__07020F21" FromRole="Seguimiento_Estado_Comprador" ToRole="Comprador" />
+    <NavigationProperty Name="Comprador1" Relationship="Self.FK__Seguimien__Id_Co__0AD2A005" FromRole="Seguimiento_Estado_Comprador" ToRole="Comprador" />
+    <NavigationProperty Name="Estado_Comprador" Relationship="Self.FK__Seguimien__Id_Es__060DEAE8" FromRole="Seguimiento_Estado_Comprador" ToRole="Estado_Comprador" />
+  </EntityType>
+  <EntityType Name="Seguimiento_Puja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Puja" Type="Int32" Nullable="false" />
+    <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Puja" Relationship="Self.FK__Seguimien__Id_Pu__1ED998B2" FromRole="Seguimiento_Puja" ToRole="Puja" />
+    <NavigationProperty Name="Puja1" Relationship="Self.FK__Seguimien__Id_Pu__1FCDBCEB" FromRole="Seguimiento_Puja" ToRole="Puja" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Comprador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Comprador" Relationship="Self.FK__Comprador__Id_Ti__014935CB" FromRole="Tipo_Comprador" ToRole="Comprador" />
+  </EntityType>
+  <EntityType Name="VCompradores">
+    <Key>
+      <PropertyRef Name="IdComprador" />
+      <PropertyRef Name="TipoPersona" />
+      <PropertyRef Name="NombreCompleto" />
+      <PropertyRef Name="FechaRegistro" />
+      <PropertyRef Name="Estado" />
+    </Key>
+    <Property Name="IdComprador" Type="Int32" Nullable="false" />
+    <Property Name="TipoPersona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NombreEmpresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoRepublica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Municipio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Localidad" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Subasta" Type="Int32" />
+    <Property Name="NombreSubasta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Ruta" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Comprador__Id_Em__3C34F16F">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comprador">
+        <PropertyRef Name="Id_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comprador__Id_Ti__014935CB">
+    <End Role="Tipo_Comprador" Type="Self.Tipo_Comprador" Multiplicity="1" />
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comprador">
+        <PropertyRef Name="Id_Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comproban__Id_Co__2A4B4B5E">
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="1" />
+    <End Role="Comprobante_Pago" Type="Self.Comprobante_Pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comprobante_Pago">
+        <PropertyRef Name="Id_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Login__Id_Compra__276EDEB3">
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="1" />
+    <End Role="Login" Type="Self.Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="Id_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Puja__Id_Comprad__09DE7BCC">
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="1" />
+    <End Role="Puja" Type="Self.Puja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Puja">
+        <PropertyRef Name="Id_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Puja__Id_Comprad__182C9B23">
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="1" />
+    <End Role="Puja" Type="Self.Puja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Puja">
+        <PropertyRef Name="Id_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Seguimien__Id_Co__07020F21">
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="1" />
+    <End Role="Seguimiento_Estado_Comprador" Type="Self.Seguimiento_Estado_Comprador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seguimiento_Estado_Comprador">
+        <PropertyRef Name="Id_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Seguimien__Id_Co__0AD2A005">
+    <End Role="Comprador" Type="Self.Comprador" Multiplicity="1" />
+    <End Role="Seguimiento_Estado_Comprador" Type="Self.Seguimiento_Estado_Comprador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seguimiento_Estado_Comprador">
+        <PropertyRef Name="Id_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empresa__Id_Loca__45BE5BA9">
+    <End Role="Localidad" Type="Self.Localidad" Multiplicity="1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="Id_Localidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Seguimien__Id_Es__060DEAE8">
+    <End Role="Estado_Comprador" Type="Self.Estado_Comprador" Multiplicity="1" />
+    <End Role="Seguimiento_Estado_Comprador" Type="Self.Seguimiento_Estado_Comprador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Comprador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seguimiento_Estado_Comprador">
+        <PropertyRef Name="Id_Estado_Comprador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Municipio__Id_Es__03F0984C">
+    <End Role="Estado_Republica" Type="Self.Estado_Republica" Multiplicity="1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Republica">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="Id_Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Localidad__Id_Mu__04E4BC85">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+    <End Role="Localidad" Type="Self.Localidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Localidad">
+        <PropertyRef Name="Id_Municipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Seguimien__Id_Pu__1ED998B2">
+    <End Role="Puja" Type="Self.Puja" Multiplicity="1" />
+    <End Role="Seguimiento_Puja" Type="Self.Seguimiento_Puja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puja">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seguimiento_Puja">
+        <PropertyRef Name="Id_Puja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Seguimien__Id_Pu__1FCDBCEB">
+    <End Role="Puja" Type="Self.Puja" Multiplicity="1" />
+    <End Role="Seguimiento_Puja" Type="Self.Seguimiento_Puja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puja">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seguimiento_Puja">
+        <PropertyRef Name="Id_Puja" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDMBIIEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comprador" EntityType="Self.Comprador" />
+    <EntitySet Name="Comprobante_Pago" EntityType="Self.Comprobante_Pago" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" />
+    <EntitySet Name="Estado_Comprador" EntityType="Self.Estado_Comprador" />
+    <EntitySet Name="Estado_Republica" EntityType="Self.Estado_Republica" />
+    <EntitySet Name="Localidad" EntityType="Self.Localidad" />
+    <EntitySet Name="Login" EntityType="Self.Login" />
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" />
+    <EntitySet Name="Puja" EntityType="Self.Puja" />
+    <EntitySet Name="Seguimiento_Estado_Comprador" EntityType="Self.Seguimiento_Estado_Comprador" />
+    <EntitySet Name="Seguimiento_Puja" EntityType="Self.Seguimiento_Puja" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tipo_Comprador" EntityType="Self.Tipo_Comprador" />
+    <EntitySet Name="VCompradores" EntityType="Self.VCompradores" />
+    <AssociationSet Name="FK__Comprador__Id_Em__3C34F16F" Association="Self.FK__Comprador__Id_Em__3C34F16F">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Comprador" EntitySet="Comprador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comprador__Id_Ti__014935CB" Association="Self.FK__Comprador__Id_Ti__014935CB">
+      <End Role="Tipo_Comprador" EntitySet="Tipo_Comprador" />
+      <End Role="Comprador" EntitySet="Comprador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comproban__Id_Co__2A4B4B5E" Association="Self.FK__Comproban__Id_Co__2A4B4B5E">
+      <End Role="Comprador" EntitySet="Comprador" />
+      <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Login__Id_Compra__276EDEB3" Association="Self.FK__Login__Id_Compra__276EDEB3">
+      <End Role="Comprador" EntitySet="Comprador" />
+      <End Role="Login" EntitySet="Login" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Puja__Id_Comprad__09DE7BCC" Association="Self.FK__Puja__Id_Comprad__09DE7BCC">
+      <End Role="Comprador" EntitySet="Comprador" />
+      <End Role="Puja" EntitySet="Puja" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Puja__Id_Comprad__182C9B23" Association="Self.FK__Puja__Id_Comprad__182C9B23">
+      <End Role="Comprador" EntitySet="Comprador" />
+      <End Role="Puja" EntitySet="Puja" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Seguimien__Id_Co__07020F21" Association="Self.FK__Seguimien__Id_Co__07020F21">
+      <End Role="Comprador" EntitySet="Comprador" />
+      <End Role="Seguimiento_Estado_Comprador" EntitySet="Seguimiento_Estado_Comprador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Seguimien__Id_Co__0AD2A005" Association="Self.FK__Seguimien__Id_Co__0AD2A005">
+      <End Role="Comprador" EntitySet="Comprador" />
+      <End Role="Seguimiento_Estado_Comprador" EntitySet="Seguimiento_Estado_Comprador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empresa__Id_Loca__45BE5BA9" Association="Self.FK__Empresa__Id_Loca__45BE5BA9">
+      <End Role="Localidad" EntitySet="Localidad" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Seguimien__Id_Es__060DEAE8" Association="Self.FK__Seguimien__Id_Es__060DEAE8">
+      <End Role="Estado_Comprador" EntitySet="Estado_Comprador" />
+      <End Role="Seguimiento_Estado_Comprador" EntitySet="Seguimiento_Estado_Comprador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Municipio__Id_Es__03F0984C" Association="Self.FK__Municipio__Id_Es__03F0984C">
+      <End Role="Estado_Republica" EntitySet="Estado_Republica" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Localidad__Id_Mu__04E4BC85" Association="Self.FK__Localidad__Id_Mu__04E4BC85">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Localidad" EntitySet="Localidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Seguimien__Id_Pu__1ED998B2" Association="Self.FK__Seguimien__Id_Pu__1ED998B2">
+      <End Role="Puja" EntitySet="Puja" />
+      <End Role="Seguimiento_Puja" EntitySet="Seguimiento_Puja" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Seguimien__Id_Pu__1FCDBCEB" Association="Self.FK__Seguimien__Id_Pu__1FCDBCEB">
+      <End Role="Puja" EntitySet="Puja" />
+      <End Role="Seguimiento_Puja" EntitySet="Seguimiento_Puja" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

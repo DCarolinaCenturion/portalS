@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FEDB069-C265-4798-913C-8E0C56A85E73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocio</RootNamespace>
+    <AssemblyName>Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="actualizarDatosPerfilBL.cs" />
+    <Compile Include="actualizarOfertaBL.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="desactivarFotoPerfilBL.cs" />
+    <Compile Include="eliminarOfertaBL.cs" />
+    <Compile Include="guardarCompradorBL.cs" />
+    <Compile Include="guardarComprobanteBL.cs" />
+    <Compile Include="guardarContactosBL.cs" />
+    <Compile Include="guardarCuentaLoginBL.cs" />
+    <Compile Include="guardarEmpresaBL.cs" />
+    <Compile Include="guardarEstadoComprador.cs" />
+    <Compile Include="guardarFotoPerfilBL.cs" />
+    <Compile Include="guardarOfertaCompradorBL.cs" />
+    <Compile Include="listarCuentasBL.cs" />
+    <Compile Include="listarEstadosBL.cs" />
+    <Compile Include="listarFotosPerfilPorCompradorBL.cs" />
+    <Compile Include="listarLocalidadesPorMunicipioBL.cs" />
+    <Compile Include="listarMunicipiosPorEstadoBL.cs" />
+    <Compile Include="listarUsuariosLoginBL.cs" />
+    <Compile Include="obtenerCompradorCuentaBL.cs" />
+    <Compile Include="obtenerCompradoresPorSubastaBL.cs" />
+    <Compile Include="obtenerInformacionCompradorBL.cs" />
+    <Compile Include="obtenerModulosBL.cs" />
+    <Compile Include="obtenerNumeroOfertasPCompradorBL.cs" />
+    <Compile Include="obtenerOfertasPorCompradorBL.cs" />
+    <Compile Include="obtenerOfertasPorSubastaBL.cs" />
+    <Compile Include="obtenerOpcionesModuloBL.cs" />
+    <Compile Include="obtenerPorcentajeValidacionBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="validarEmailBL.cs" />
+    <Compile Include="validarOfertaBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{a246dfe9-0bf2-4cfc-837a-1784c325d9af}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{cfd73d4f-cbea-4439-863c-aa22ac49ba78}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

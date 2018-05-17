@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d1029a5552be4b86aad7e81a572fb063" Name="Diagram1">
+        <EntityTypeShape EntityType="BDMBIIModel.Comprador" Width="1.5" PointX="7.5" PointY="6.375" />
+        <EntityTypeShape EntityType="BDMBIIModel.Comprobante_Pago" Width="1.5" PointX="9.75" PointY="13" />
+        <EntityTypeShape EntityType="BDMBIIModel.Estado_Comprador" Width="1.5" PointX="10.5" PointY="10.125" />
+        <EntityTypeShape EntityType="BDMBIIModel.Estado_Republica" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="BDMBIIModel.Localidad" Width="1.5" PointX="5.25" PointY="7.875" />
+        <EntityTypeShape EntityType="BDMBIIModel.Login" Width="1.5" PointX="9.75" PointY="16.125" />
+        <EntityTypeShape EntityType="BDMBIIModel.Municipio" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="BDMBIIModel.Seguimiento_Estado_Comprador" Width="1.5" PointX="12.75" PointY="7.625" />
+        <EntityTypeShape EntityType="BDMBIIModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BDMBIIModel.Tipo_Comprador" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="BDMBIIModel.VCompradores" Width="1.5" PointX="2.75" PointY="0.75" />
+        <AssociationConnector Association="BDMBIIModel.FK__Comprador__Id_Lo__634EBE90" />
+        <AssociationConnector Association="BDMBIIModel.FK__Comprador__Id_Ti__014935CB" />
+        <AssociationConnector Association="BDMBIIModel.FK__Comproban__Id_Co__2A4B4B5E" />
+        <AssociationConnector Association="BDMBIIModel.FK__Login__Id_Compra__276EDEB3" />
+        <AssociationConnector Association="BDMBIIModel.FK__Seguimien__Id_Co__07020F21" />
+        <AssociationConnector Association="BDMBIIModel.FK__Seguimien__Id_Co__0AD2A005" />
+        <AssociationConnector Association="BDMBIIModel.FK__Seguimien__Id_Es__060DEAE8" />
+        <AssociationConnector Association="BDMBIIModel.FK__Municipio__Id_Es__03F0984C" />
+        <AssociationConnector Association="BDMBIIModel.FK__Localidad__Id_Mu__04E4BC85" />
+        <EntityTypeShape EntityType="BDMBIIModel.Modulos" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="BDMBIIModel.OpcionesModulo" Width="1.5" PointX="3" PointY="12" />
+        <AssociationConnector Association="BDMBIIModel.FK__OpcionMod__IdMod__690797E6" />
+        <EntityTypeShape EntityType="BDMBIIModel.Porcentaje_Puja" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BDMBIIModel.Puja" Width="1.5" PointX="9.75" PointY="19.625" />
+        <AssociationConnector Association="BDMBIIModel.FK__Puja__Id_Comprad__09DE7BCC" />
+        <AssociationConnector Association="BDMBIIModel.FK__Puja__Id_Comprad__182C9B23" />
+        <EntityTypeShape EntityType="BDMBIIModel.Seguimiento_Puja" Width="1.5" PointX="12" PointY="19.75" />
+        <AssociationConnector Association="BDMBIIModel.FK__Seguimien__Id_Pu__1ED998B2" />
+        <AssociationConnector Association="BDMBIIModel.FK__Seguimien__Id_Pu__1FCDBCEB" />
+        <EntityTypeShape EntityType="BDMBIIModel.VOfertas" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BDMBIIModel.VLoginUsuarios" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BDMBIIModel.Perfil" Width="1.5" PointX="9.75" PointY="3" />
+        <AssociationConnector Association="BDMBIIModel.FK__Perfil__Id_Compr__0E391C95" />
+        <EntityTypeShape EntityType="BDMBIIModel.Contacto_Comprador" Width="1.5" PointX="9.75" PointY="6.875" />
+        <AssociationConnector Association="BDMBIIModel.FK__Contacto___Id_Co__540C7B00" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

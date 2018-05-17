@@ -1,0 +1,15 @@
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\WcfServicePortalSubastas.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\WcfServicePortalSubastas.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\AccesoDatos.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\Entidades.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\EntityFramework.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\EntityFramework.SqlServer.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\AccesoDatos.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\Entidades.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\EntityFramework.xml
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\EntityFramework.SqlServer.xml
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\es\EntityFramework.resources.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\obj\Debug\WcfServicePortalSubastas.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\obj\Debug\WcfServicePortalSubastas.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\WcfServicePortalSubastas\obj\Debug\WcfServicePortalSubastas.pdb

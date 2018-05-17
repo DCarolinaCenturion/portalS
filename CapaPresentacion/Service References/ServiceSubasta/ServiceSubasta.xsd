@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Subasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BienMuebleSubasta" nillable="true" type="tns:ArrayOfBienMuebleSubasta" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaModificacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaRealizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Habilitado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Lote" nillable="true" type="tns:ArrayOfLote" />
+      <xs:element minOccurs="0" name="Lote1" nillable="true" type="tns:ArrayOfLote" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:ArrayOfProveedor" />
+      <xs:element minOccurs="0" name="SeguimientoEstadoSubasta" nillable="true" type="tns:ArrayOfSeguimientoEstadoSubasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Subasta" nillable="true" type="tns:Subasta" />
+  <xs:complexType name="ArrayOfBienMuebleSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BienMuebleSubasta" nillable="true" type="tns:BienMuebleSubasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBienMuebleSubasta" nillable="true" type="tns:ArrayOfBienMuebleSubasta" />
+  <xs:complexType name="BienMuebleSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Caracteristicas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectorioSubastaProveedorFoto" nillable="true" type="tns:ArrayOfDirectorioSubastaProveedorFoto" />
+      <xs:element minOccurs="0" name="EstatusBienBodega" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaAdquisicion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HistoricoBienMuebleSubasta" nillable="true" type="tns:ArrayOfHistoricoBienMuebleSubasta" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBien" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBienConsecutivo" type="xs:int" />
+      <xs:element minOccurs="0" name="IdEmpleado" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Partida" type="xs:int" />
+      <xs:element minOccurs="0" name="Identificador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoteBien" nillable="true" type="tns:ArrayOfLoteBien" />
+      <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSerie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreBien" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumInventario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Partida" nillable="true" type="tns:Partida" />
+      <xs:element minOccurs="0" name="Subasta" nillable="true" type="tns:Subasta" />
+      <xs:element minOccurs="0" name="ValorAdquisicion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="valuaciones" nillable="true" type="tns:ArrayOfvaluaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BienMuebleSubasta" nillable="true" type="tns:BienMuebleSubasta" />
+  <xs:complexType name="ArrayOfDirectorioSubastaProveedorFoto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DirectorioSubastaProveedorFoto" nillable="true" type="tns:DirectorioSubastaProveedorFoto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirectorioSubastaProveedorFoto" nillable="true" type="tns:ArrayOfDirectorioSubastaProveedorFoto" />
+  <xs:complexType name="DirectorioSubastaProveedorFoto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BienMuebleSubasta" nillable="true" type="tns:BienMuebleSubasta" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_BienMuebleSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Proveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor" />
+      <xs:element minOccurs="0" name="RutaFoto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectorioSubastaProveedorFoto" nillable="true" type="tns:DirectorioSubastaProveedorFoto" />
+  <xs:complexType name="Proveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Adjudicado" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cotizaciones" nillable="true" type="tns:ArrayOfCotizaciones" />
+      <xs:element minOccurs="0" name="DetalleProveedorAdjudicado" nillable="true" type="tns:ArrayOfDetalleProveedorAdjudicado" />
+      <xs:element minOccurs="0" name="DirectorioExcelAdjudicado" nillable="true" type="tns:ArrayOfDirectorioExcelAdjudicado" />
+      <xs:element minOccurs="0" name="DirectorioSubastaProveedor" nillable="true" type="tns:ArrayOfDirectorioSubastaProveedor" />
+      <xs:element minOccurs="0" name="DirectorioSubastaProveedorFoto" nillable="true" type="tns:ArrayOfDirectorioSubastaProveedorFoto" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaEnvioInvitacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_ProveedorPortal" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreProveedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeguimientoEstadoProveedor" nillable="true" type="tns:ArrayOfSeguimientoEstadoProveedor" />
+      <xs:element minOccurs="0" name="Subasta" nillable="true" type="tns:Subasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Proveedor" nillable="true" type="tns:Proveedor" />
+  <xs:complexType name="ArrayOfCotizaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cotizaciones" nillable="true" type="tns:Cotizaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCotizaciones" nillable="true" type="tns:ArrayOfCotizaciones" />
+  <xs:complexType name="Cotizaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetallesCotizacion" nillable="true" type="tns:ArrayOfDetallesCotizacion" />
+      <xs:element minOccurs="0" name="FechaRecepcion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Proveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cotizaciones" nillable="true" type="tns:Cotizaciones" />
+  <xs:complexType name="ArrayOfDetallesCotizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetallesCotizacion" nillable="true" type="tns:DetallesCotizacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetallesCotizacion" nillable="true" type="tns:ArrayOfDetallesCotizacion" />
+  <xs:complexType name="DetallesCotizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Cotizaciones" nillable="true" type="tns:Cotizaciones" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSolicitudProveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Cotizacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Partida" type="xs:int" />
+      <xs:element minOccurs="0" name="NombrePartida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorCotizacion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetallesCotizacion" nillable="true" type="tns:DetallesCotizacion" />
+  <xs:complexType name="ArrayOfDetalleProveedorAdjudicado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleProveedorAdjudicado" nillable="true" type="tns:DetalleProveedorAdjudicado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleProveedorAdjudicado" nillable="true" type="tns:ArrayOfDetalleProveedorAdjudicado" />
+  <xs:complexType name="DetalleProveedorAdjudicado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Partida" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Proveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Partida" nillable="true" type="tns:Partida" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor" />
+      <xs:element minOccurs="0" name="ValorCotizacion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleProveedorAdjudicado" nillable="true" type="tns:DetalleProveedorAdjudicado" />
+  <xs:complexType name="Partida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BienMuebleSubasta" nillable="true" type="tns:ArrayOfBienMuebleSubasta" />
+      <xs:element minOccurs="0" name="ClaveEspecifica" type="xs:int" />
+      <xs:element minOccurs="0" name="DetalleProveedorAdjudicado" nillable="true" type="tns:ArrayOfDetalleProveedorAdjudicado" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Partida" nillable="true" type="tns:Partida" />
+  <xs:complexType name="ArrayOfDirectorioExcelAdjudicado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DirectorioExcelAdjudicado" nillable="true" type="tns:DirectorioExcelAdjudicado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirectorioExcelAdjudicado" nillable="true" type="tns:ArrayOfDirectorioExcelAdjudicado" />
+  <xs:complexType name="DirectorioExcelAdjudicado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_ProveedorSistema" type="xs:int" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor" />
+      <xs:element minOccurs="0" name="Ruta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectorioExcelAdjudicado" nillable="true" type="tns:DirectorioExcelAdjudicado" />
+  <xs:complexType name="ArrayOfDirectorioSubastaProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DirectorioSubastaProveedor" nillable="true" type="tns:DirectorioSubastaProveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDirectorioSubastaProveedor" nillable="true" type="tns:ArrayOfDirectorioSubastaProveedor" />
+  <xs:complexType name="DirectorioSubastaProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Proveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor" />
+      <xs:element minOccurs="0" name="Ruta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectorioSubastaProveedor" nillable="true" type="tns:DirectorioSubastaProveedor" />
+  <xs:complexType name="ArrayOfSeguimientoEstadoProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeguimientoEstadoProveedor" nillable="true" type="tns:SeguimientoEstadoProveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeguimientoEstadoProveedor" nillable="true" type="tns:ArrayOfSeguimientoEstadoProveedor" />
+  <xs:complexType name="SeguimientoEstadoProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoProveedor" nillable="true" type="tns:EstadoProveedor" />
+      <xs:element minOccurs="0" name="EstadoProveedor1" nillable="true" type="tns:EstadoProveedor" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Estado" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Proveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="tns:Proveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguimientoEstadoProveedor" nillable="true" type="tns:SeguimientoEstadoProveedor" />
+  <xs:complexType name="EstadoProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SeguimientoEstadoProveedor" nillable="true" type="tns:ArrayOfSeguimientoEstadoProveedor" />
+      <xs:element minOccurs="0" name="SeguimientoEstadoProveedor1" nillable="true" type="tns:ArrayOfSeguimientoEstadoProveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoProveedor" nillable="true" type="tns:EstadoProveedor" />
+  <xs:complexType name="ArrayOfHistoricoBienMuebleSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricoBienMuebleSubasta" nillable="true" type="tns:HistoricoBienMuebleSubasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricoBienMuebleSubasta" nillable="true" type="tns:ArrayOfHistoricoBienMuebleSubasta" />
+  <xs:complexType name="HistoricoBienMuebleSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BienMuebleSubasta" nillable="true" type="tns:BienMuebleSubasta" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaEliminacionSistema" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBienConsecutivo" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBienMuebleSubasta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricoBienMuebleSubasta" nillable="true" type="tns:HistoricoBienMuebleSubasta" />
+  <xs:complexType name="ArrayOfLoteBien">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoteBien" nillable="true" type="tns:LoteBien" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoteBien" nillable="true" type="tns:ArrayOfLoteBien" />
+  <xs:complexType name="LoteBien">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BienMuebleSubasta" nillable="true" type="tns:BienMuebleSubasta" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_BienMuebleSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Lote" type="xs:int" />
+      <xs:element minOccurs="0" name="Lote" nillable="true" type="tns:Lote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoteBien" nillable="true" type="tns:LoteBien" />
+  <xs:complexType name="Lote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Subasta" type="xs:int" />
+      <xs:element minOccurs="0" name="LoteBien" nillable="true" type="tns:ArrayOfLoteBien" />
+      <xs:element minOccurs="0" name="NumLote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subasta" nillable="true" type="tns:Subasta" />
+      <xs:element minOccurs="0" name="Subasta1" nillable="true" type="tns:Subasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lote" nillable="true" type="tns:Lote" />
+  <xs:complexType name="ArrayOfvaluaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="valuaciones" nillable="true" type="tns:valuaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfvaluaciones" nillable="true" type="tns:ArrayOfvaluaciones" />
+  <xs:complexType name="valuaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BienMuebleSubasta" nillable="true" type="tns:BienMuebleSubasta" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBienMuebleSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="IdValuador" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorAvaluoBien" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorAvaluoLote" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="valuaciones" nillable="true" type="tns:valuaciones" />
+  <xs:complexType name="ArrayOfLote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lote" nillable="true" type="tns:Lote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLote" nillable="true" type="tns:ArrayOfLote" />
+  <xs:complexType name="ArrayOfProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proveedor" nillable="true" type="tns:Proveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProveedor" nillable="true" type="tns:ArrayOfProveedor" />
+  <xs:complexType name="ArrayOfSeguimientoEstadoSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeguimientoEstadoSubasta" nillable="true" type="tns:SeguimientoEstadoSubasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeguimientoEstadoSubasta" nillable="true" type="tns:ArrayOfSeguimientoEstadoSubasta" />
+  <xs:complexType name="SeguimientoEstadoSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoSubasta" nillable="true" type="tns:EstadoSubasta" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_EstadoSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Subasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Subasta" nillable="true" type="tns:Subasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeguimientoEstadoSubasta" nillable="true" type="tns:SeguimientoEstadoSubasta" />
+  <xs:complexType name="EstadoSubasta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SeguimientoEstadoSubasta" nillable="true" type="tns:ArrayOfSeguimientoEstadoSubasta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoSubasta" nillable="true" type="tns:EstadoSubasta" />
+  <xs:complexType name="ArrayOfLotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lotes" nillable="true" type="tns:Lotes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLotes" nillable="true" type="tns:ArrayOfLotes" />
+  <xs:complexType name="Lotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Lote" type="xs:int" />
+      <xs:element minOccurs="0" name="NumLote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorLote" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lotes" nillable="true" type="tns:Lotes" />
+  <xs:complexType name="ArrayOfVDetallesLote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VDetallesLote" nillable="true" type="tns:VDetallesLote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVDetallesLote" nillable="true" type="tns:ArrayOfVDetallesLote" />
+  <xs:complexType name="VDetallesLote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBienMuebleControl" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBienMuebleSistema" type="xs:int" />
+      <xs:element minOccurs="0" name="IdLote" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubasta" type="xs:int" />
+      <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroLote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorPorBien" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorPorLote" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VDetallesLote" nillable="true" type="tns:VDetallesLote" />
+</xs:schema>

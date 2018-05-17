@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="480aab75-8885-42f7-b07f-0efc2464dfa2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceSubasta1.xsd" MetadataType="Schema" ID="251a6e39-749f-4cd4-9002-d82383662028" SourceId="1" SourceUrl="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceSubasta2.xsd" MetadataType="Schema" ID="31e89951-e0b6-4c0b-89f3-253406a2e733" SourceId="1" SourceUrl="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceSubasta3.xsd" MetadataType="Schema" ID="72458a3a-9e43-4d8b-801e-c361b654f580" SourceId="1" SourceUrl="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceSubasta.xsd" MetadataType="Schema" ID="5d5b56f5-4f7c-4ee9-9f63-968ced38c56f" SourceId="1" SourceUrl="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceSubasta.disco" MetadataType="Disco" ID="fb7762d9-bff4-4e10-8333-de766d1dc8f7" SourceId="1" SourceUrl="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?disco" />
+    <MetadataFile FileName="ServiceSubasta.wsdl" MetadataType="Wsdl" ID="31d03cac-a70e-4de2-acd7-ded264d1e533" SourceId="1" SourceUrl="http://172.19.2.102/WCFSISubastas/ServiceSubasta.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

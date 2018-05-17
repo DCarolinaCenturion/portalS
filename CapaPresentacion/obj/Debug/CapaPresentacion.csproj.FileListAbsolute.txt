@@ -1,0 +1,17 @@
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\CapaPresentacion.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\CapaPresentacion.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\Entidades.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\EntityFramework.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\EntityFramework.SqlServer.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\Negocio.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\AccesoDatos.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\Entidades.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\Negocio.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\EntityFramework.xml
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\EntityFramework.SqlServer.xml
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\AccesoDatos.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\es\EntityFramework.resources.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\obj\Debug\CapaPresentacion.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\CapaPresentacion\obj\Debug\CapaPresentacion.pdb

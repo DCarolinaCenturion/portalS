@@ -1,0 +1,12 @@
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\AccesoDatos.dll.config
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\AccesoDatos.dll
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\AccesoDatos.pdb
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\EntityFramework.dll
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\EntityFramework.xml
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\es\EntityFramework.resources.dll
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\bin\Release\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\obj\Release\AccesoDatos.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\obj\Release\AccesoDatos.dll
+C:\Users\Carolina\documents\visual studio 2012\Projects\SubastaII\AccesoDatos\obj\Release\AccesoDatos.pdb

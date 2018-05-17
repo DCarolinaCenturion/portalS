@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>Editing Events</title>
+	<meta  name = "viewport" content = "initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+
+	<script src="//cdn.webix.com/site/webix.js?v=5.0.2" type="text/javascript"></script>
+	<script src="//cdn.webix.com/site/filemanager/filemanager.js?v=5.0.2" type="text/javascript"></script>
+
+	<link rel="stylesheet" type="text/css" href="//cdn.webix.com/site/webix.css?v=5.0.2">
+	<link rel="stylesheet" type="text/css" href="//cdn.webix.com/site/filemanager/filemanager.css?v=5.0.2">
+
+
+</head>
+<body>
+<script type="text/javascript">
+	var count = 1;
+	webix.ready(function(){
+
+		webix.ui({
+			view:"filemanager",
+			id:"files"
+		});
+
+		$$("files").load("../common/data.php");
+
+		$$("files").attachEvent("onBeforeEditFile",function(ids){
+			webix.message("Edit started: "+ids[0]);
+			return true;
+		});
+
+		$$("files").attachEvent("onBeforeEditStop",function(id,state,editor,view){
+			webix.message("New value: "+state.value);
+			return true;
+		});
+
+		$$("files").attachEvent("onAfterEditStop",function(id,state,editor,view){
+			webix.message("Editor closed: "+ id);
+			return true;
+		});
+	});
+</script>
+</body>
+</html><script src='https://cdn.ravenjs.com/3.10.0/raven.min.js'></script><script>Raven.config('https://417d33c31f07425cad14617d060cc3e8@sentry.webix.io/11',{ release:'5.0.2'}).install();</script>

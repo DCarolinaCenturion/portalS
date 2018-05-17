@@ -1,0 +1,10 @@
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\Entidades.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\obj\Debug\Entidades.dll
+C:\Users\Carolina\Documents\Visual Studio 2012\Projects\SubastaII\Entidades\obj\Debug\Entidades.pdb

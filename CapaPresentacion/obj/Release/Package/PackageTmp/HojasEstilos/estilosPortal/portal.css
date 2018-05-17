@@ -1,0 +1,82 @@
+﻿  .form-control
+        {
+            border: none;
+            border-bottom: 1px solid #bdbdbd;
+            border-radius: 0px;
+        }
+        label
+        {
+           color:#76838f;
+        }
+        .row
+        {
+
+            margin-left:10px;
+        }
+
+
+          /*estilos por wizard*/
+        #Registro section
+        {
+
+            position:relative;
+        }
+
+
+        .wizard > .content > .body 
+        {
+            padding:0px;
+        }
+       .wizard > .content > .body ul
+        {
+           display:block;
+           list-style: none ! important;
+        
+        }
+      .wizard > .content > .body ul li.active
+        {
+            border-style:none;
+        }
+
+       .wizard > .content > .body ul li.active a
+        {
+            border-style:none;
+           
+        }
+
+      
+        @media only screen and (max-width: 768px)
+        {
+
+             /* First hide all steps from the begining on */
+        .wizard > .steps li
+        {
+        display: none;
+        }
+
+        /* Then just re-show only the current step */
+        .wizard > .steps li.current 
+        {
+            display: block;
+        }
+      
+        }
+        .above-nav{
+        height: 100px;
+        background-color: #A1887F;
+      
+         }
+
+          p {
+          color:#fff;
+          line-height: 100px;
+          font-size:20px;
+          padding: 0;
+        }
+
+          .affix {
+              top: 0px;
+              width:100%;
+            }
+
+         
