@@ -81,27 +81,13 @@ namespace CapaPresentacion
 
 
                 //Prepara para enviar el password generado por email
-                MailMessage mensaje = null;
-                mensaje = new MailMessage();
-                //se le asigna el email
-                mensaje.To.Add(new MailAddress(comprador.Email));
-                mensaje.From = new MailAddress("siscompras@outlook.com", "appCompras");
-                mensaje.Subject = "Nuevo password asignado" + " " + DateTime.Now;
-                //se le adjunta la contraseña generada en el cuerpo del mensaje
-                mensaje.Body = "Su contraseña es: " + contrasena;
+                ServicioUsuarios.LoginClient servicioEmail = new ServicioUsuarios.LoginClient();
+                ServicioUsuarios.MailSistema mail = new ServicioUsuarios.MailSistema();
+                mail.Titulo = "Portal de Subastas";
+                mail.Cuerpo = "Se ha generado una nueva contraseña:" + "" + contrasena;
+                mail.Asunto = "Nueva contraseña generada";
 
-                mensaje.SubjectEncoding = System.Text.Encoding.UTF8;
-                mensaje.BodyEncoding = System.Text.Encoding.UTF8;
-                SmtpClient cliente = new SmtpClient("smtp.live.com");
-                cliente.EnableSsl = true;//le definimos si es conexión ssl
-                cliente.UseDefaultCredentials = true;
-                //le decimos que no utilice la credencial por defecto
-                //cliente.Host = "stmp.live.com"; //agregamos el servidor smtp
-                //cliente.Port = 25; //le asignamos el puerto
-                cliente.Credentials = new System.Net.NetworkCredential("siscompras@outlook.com", "appCompras"); //agregamos nuestro usuario y pass de gmail
-                //Envìa el mensaje de correo electrónico con los parámetros asignados.
-                cliente.Send(mensaje);
-
+                servicioEmail.EnviarCorreo(comprador.Email, mail);
 
                 string encriptado = Entidades.Encriptador.Encrypt(contrasena);
               

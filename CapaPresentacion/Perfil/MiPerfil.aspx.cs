@@ -41,9 +41,18 @@ namespace CapaPresentacion.Perfil
 
             try
             {
+                string urlPerfilActivo;
                 List<Entidades.Perfil> fotosperfil = Negocio.listarFotosPerfilPorCompradorBL.listarFPerfilComprador(idComprador);
                 Entidades.Perfil perfil = fotosperfil.Find(x => x.Activo == true);
-                string urlPerfilActivo = perfil.urlImagen;
+                if (perfil != null)
+                {
+                    urlPerfilActivo = perfil.urlImagen;
+                }
+                else
+                {
+                    urlPerfilActivo = "../FotosPerfil/sin_perfil.png";
+                }
+
                 return urlPerfilActivo;
             }
             catch (Exception excepcion)
@@ -63,6 +72,23 @@ namespace CapaPresentacion.Perfil
                 
                 throw excepcion;
             }
+        }
+
+        [WebMethod]
+
+        public static int obtenerTotalOfertas(int idSubasta, int idComprador)
+        {
+            int totalOfertas = Negocio.obtenerNumeroOfertasPCompradorBL.obtenerNumOfertasPComprador(idSubasta, idComprador);
+            return totalOfertas;
+        }
+
+        [WebMethod]
+
+        public static DateTime obtenerFechaSubasta(int idSubasta)
+        {
+            ServiceSubasta.ServiceSubastaClient servicioSubasta = new ServiceSubasta.ServiceSubastaClient();
+            DateTime FechaRealizacion = servicioSubasta.obtenerFechaSubasta(idSubasta);
+            return FechaRealizacion;
         }
 
 

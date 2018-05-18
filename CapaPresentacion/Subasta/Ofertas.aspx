@@ -14,14 +14,15 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Contenido" runat="server">
     <div class="panel panel-default">
-        <div class="panel-heading"><h3>Ofertas Realizadas</h3></div>
+        <div class="panel-heading">
+            <h3 class="panel-title">Ofertas Realizadas</h3>
+        </div>
         <div class="panel-body">
-            <table id="tblOfertas" class="table table-hover table-striped"></table>
+            <table id="tblOfertas" class="table-striped table-bordered table-condensed">
+
+            </table>
         </div>
         <div class="panel-footer">
-          <%--  
-             <p class="lead" style="display:inline-block;">Monto Total Ofertado</p>
-             --%>
         </div>
     </div>
     

@@ -9,9 +9,8 @@
 });
 
 
-function obtenerBienesSCompradores() {
-
-
+function obtenerBienesSCompradores()
+{
     MensajeCargando();
 
     //$("#contenidoOrigen").empty();
@@ -128,14 +127,6 @@ function obtenerBienesSCompradores() {
 
 
             OcultarMensajeCargando();
-
-
-
-
-
-
-
-
         },
 
         error: function (error) {
@@ -143,15 +134,7 @@ function obtenerBienesSCompradores() {
             OcultarMensajeCargando();
             //console.log("No se pudieron obtener los datos.");
         }
-
-
-
     });
-    //Añadir class hover fila selecionada
-
-
-
-
     //Mostrar columnas extras
     function format(d) {
         //console.log('llegue');
@@ -192,14 +175,11 @@ function obtenerBienesSCompradores() {
 
         '</table>';
     }
-    //Mostrar columnas extras
-
-
-
 
 }
 
-function temporizador() {
+function temporizador()
+{
 
     $.ajax({
 
@@ -209,7 +189,8 @@ function temporizador() {
         dataType: 'json',
         async: true,
         data: JSON.stringify({ 'idSubasta': parseInt($("#hdIdSubasta").val()) }),
-        success: function (result) {
+        success: function (result)
+        {
             var s = result.d;
             var date = new Date(parseInt(s.substr(6)));
             var fechaRe = date.getFullYear() + "-" +
@@ -230,11 +211,6 @@ function temporizador() {
         error: function (error) {
 
         }
-
-
-
-
-
     });
 }
 
@@ -248,20 +224,15 @@ function obtenerContadorOfertas()
         dataType: 'json',
         async: true,
         data: JSON.stringify({ 'idSubasta': parseInt($("#hdIdSubasta").val()), 'idComprador': parseInt($("#hdIdComprador").val()) }),
-        success: function (result) {
+        success: function (result)
+        {
             var total = result.d;
             $("#contadorOfertas").text(total);
-            
-
         },
 
-        error: function (error) {
+        error: function (error)
+        {
 
         }
-
-
-
-
-
     });
 }

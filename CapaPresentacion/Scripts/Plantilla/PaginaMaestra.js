@@ -1,15 +1,20 @@
 ﻿function pageLoad() {
     
     ConfigurarGrids();
-
+   
 
 }
 $(document).ready(function () {
+  
     window.history.forward(1);
     cargarFotoPerfilActiva();
     if (hdIdComprador.Value != 0) {
         CargarMenu(hdIdComprador.value);
+       
+        
     }
+
+    cargarFotoPerfilActiva();
     //Esto se habilita si usan los grid del asp
     //ConfigurarGrids();
 });
@@ -175,33 +180,7 @@ function beginRequest(sender, args) {
     });
 }
 
-//función para cargar la foto de perfil activa
-function cargarFotoPerfilActiva() {
-    $.ajax({
 
-        type: "POST",
-        url: baseUrl+"Servicios/ServicioSistema.asmx/obtenerUrlFotoPerfil",
-        contentType: "application/json; charset=utf-8",
-        dataType: 'json',
-        async: true,
-        data: JSON.stringify({ 'idComprador': parseInt($("#hdIdComprador").val()) }),
-        success: function (result) {
-            var urlFotoActiva = result.d;
-            var urlConfigurada = "../" + urlFotoActiva.substring(2, urlFotoActiva.length);
-            console.log(urlConfigurada)
-            $("#avatar2").attr("src", urlConfigurada);
-            //$("#avatar2").attr("src", urlConfigurada);
-
-        },
-
-        error: function (error) {
-            //console.log(error);
-            OcultarMensajeCargando();
-            //console.log("No se pudieron obtener los datos.");
-        }
-    });
-
-}
 //manejador al finalizar un postback, si ocurre un error cacharlo y mostrarlo 
 function EndRequestHandler(sender, args) {
     //si existe un error
@@ -405,3 +384,35 @@ $(function () {
     });
 
 })
+
+//función para cargar la foto de perfil activa
+function cargarFotoPerfilActiva() {
+
+    $.ajax({
+
+        type: "POST",
+        url: baseUrl + "Servicios/ServicioSistema.asmx/obtenerUrlFotoPerfil",
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        async: true,
+        data: JSON.stringify({ 'idComprador': parseInt($("#hdIdComprador").val()) }),
+        success: function (result) {
+            var urlFotoActiva = result.d;
+            var urlConfigurada = "../" + urlFotoActiva.substring(2, urlFotoActiva.length);
+            console.log(urlConfigurada)
+            $("#imgPerfil").attr("src", urlConfigurada);
+            $("#avatar2").attr("src", urlConfigurada);
+
+        },
+
+        error: function (error) {
+            //console.log(error);
+            OcultarMensajeCargando();
+            //console.log("No se pudieron obtener los datos.");
+        }
+    });
+
+}
+
+
+

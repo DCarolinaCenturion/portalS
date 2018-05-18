@@ -78,7 +78,7 @@
                     <div class="navbar-header">
                         <a href="#/" class="navbar-brand">
                             <div class="brand-logo">
-                                <img src="../Imagenes/LogoGeneral.png" class="img-responsive" />
+                                <span style="color:white;">Portal Subastas <i class="fa fa-gavel" style="color:white" ></i></span>
                             </div>
                             <div class="brand-logo-collapsed">
                                 <img src="../Imagenes/LogoGeneralSimple.png" alt="App Logo" class="img-responsive" />
@@ -235,9 +235,7 @@
                         <div class="item user-block">                          
                            <div class="user-block-picture">                            
                                <div class="user-block-status">                                
-                                   <%--<dx:ASPxBinaryImage ID="imgPerfil" runat="server" Width="60px" Height="60px" CssClass="img-thumbnail img-circle">
-                                       <EmptyImage Url="~/Imagenes/Perfil.png" Height="60px" Width="60px"></EmptyImage>
-                                   </dx:ASPxBinaryImage>     --%>
+                                   <img src="#"  id="imgPerfil" class="img-thumbnail img-circle" style="width:60px; height:60px;"/>
                                  <div class="circle circle-success circle-lg"></div>
                               </div>
                            </div>                          
@@ -268,11 +266,11 @@
                            <div class="nombresistema">
                                <div class="logo" style="font-size: 1.4em; ">
                                    <%-- Icono sistema --%>
-                                   <em class="fa fa-cube"></em>
+                                   <em class="fa fa-gavel"></em>
                                </div>
                                <div class="nombrelogo">
                                    <%-- Nombre sistema --%>
-                                   <em class="fa fa-cube" style="font-size: 1.4em;"></em>&nbsp Sistema
+                                   <em class="fa fa-gavel" style="font-size: 1.4em;"></em>&nbsp Portal Subastas
                                </div>
                            </div>
                        </div>

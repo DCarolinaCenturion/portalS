@@ -53,9 +53,19 @@ namespace Presentacion.Servicios
 
             try
             {
+               string urlPerfilActivo;
                 List<Entidades.Perfil> fotosperfil = Negocio.listarFotosPerfilPorCompradorBL.listarFPerfilComprador(idComprador);
                 Entidades.Perfil perfil = fotosperfil.Find(x => x.Activo == true);
-                string urlPerfilActivo = perfil.urlImagen;
+
+                if (perfil != null)
+                {
+                    urlPerfilActivo = perfil.urlImagen;
+                }
+                else 
+                {
+                    urlPerfilActivo = "../FotosPerfil/sin_perfil.png";
+                }
+             
                 return urlPerfilActivo;
 
             }
@@ -66,8 +76,7 @@ namespace Presentacion.Servicios
             }
         }
 
-
-
+      
     }
 
     public class Modulos

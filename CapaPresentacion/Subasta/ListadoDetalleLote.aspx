@@ -30,25 +30,26 @@
         <div class="row">
             <div class="col-lg-12">
                  <div class="panel panel-default " >
-        
-                     <div class="col-md-6 table-responsive" >
-                         <label class="m0 h3">Número de Lote:  </label>
+                     <div class="panel-heading">
+                         <div class="panel-title">
+                             <label class="m0 h3">Número de Lote:  </label>
                          <label class="lead" id="lblNumLote" style="display:inline-block;"></label>
-                         <table id="tblDetallesLote" class="table table-striped table-bordered table-hover"></table>
+                         </div>
+
                      </div>
-                     <div class="col-md-6" id="contentGaleriaBienes" style="margin-top:120px;">
-                        <%-- <p style="display:inline-block;" class="lead">Galería</p>--%>
-                        
-                         <div id="gallery" style="display:none;">
-		
-			
-		
-		                </div>
+
+                     <div class="panel-body">
+                         <div class="row ">
+                              <div class="col-md-8 table-responsive " >
+                                <table id="tblDetallesLote" class="table-striped table-bordered table-condensed"></table>
+                              </div>
+                             <div class="col-md-4" id="contentGaleriaBienes" >
+                                 <div id="gallery" style="display:none;"></div>
+                             </div>
+                         </div>
                         
                      </div>
                   </div>
-             
-      
             </div>
         </div>
    

@@ -17,20 +17,21 @@ $(document).ready(function () {
 
 
 });
-function GetURLParameter(sParam) {
+function GetURLParameter(sParam)
+{
 
     var sPageURL = window.location.search.substring(1);
 
     var sURLVariables = sPageURL.split('&');
 
-    for (var i = 0; i < sURLVariables.length; i++) {
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
 
         var sParameterName = sURLVariables[i].split('=');
 
-        if (sParameterName[0] == sParam) {
-
+        if (sParameterName[0] == sParam)
+        {
             return sParameterName[1];
-
         }
 
     }
@@ -42,14 +43,9 @@ function obtenerBienesCards()
 {
 
     MensajeCargando();
-
-  
     var myTableBC = jQuery("#tblDetallesLote");
-
-
-
-    jQuery("<thead><tr><th></th><th></th><th >No. Lote</th><th >Valor Lote</th><th>Descripción</th><th >Valor unitario</th><th >Marca</th><th >Modelo</th></tr></thead>").appendTo(myTableBC);
-    jQuery("<thead><tr><th></th><th></th><th class='Filter'>No. Lote</th><th class='Filter'>Valor Lote</th><th class='Filter'>Descripción</th><th  class='Filter'>Valor unitario</th><th class='Filter'>Marca</th><th class='Filter'>Modelo</th></tr></thead>").appendTo(myTableBC);
+    jQuery("<thead><tr><th></th><th></th><th >No. Lote</th><th >Valor Lote</th><th>Descripción</th><th >Valor unitario</th></tr></thead>").appendTo(myTableBC);
+    jQuery("<thead><tr><th></th><th></th><th class='Filter'>No. Lote</th><th class='Filter'>Valor Lote</th><th class='Filter'>Descripción</th><th  class='Filter'>Valor unitario</th></tr></thead>").appendTo(myTableBC);
 
 
     $.ajax({
@@ -59,22 +55,21 @@ function obtenerBienesCards()
         url: "ListadoDetalleLote.aspx/obtenerDetalleLote",
         data: JSON.stringify({ 'idSubasta': parseInt($("#Contenido_hdIdSubasta").val()), 'idLote': parseInt($("#Contenido_hdNumLote").val()) }),
         contentType: "application/json; charset=utf-8",
-        success: function (result) {
+        success: function (result)
+        {
             var data = result.d;
-            //console.log(data);
-
-            $('#tblDetallesLote').find(".Filter").each(function () {
+            $('#tblDetallesLote').find(".Filter").each(function ()
+            {
                 var title = $(this).text();
                 $(this).html('<input type="text" onkeypress="return event.keyCode != 13;" class="form-control width-full filtro" placeholder="' + title + '" />');
             });
 
            
-            table = $('#tblDetallesLote').DataTable({
+            table = $('#tblDetallesLote').DataTable(
+                {
 
-                select: {
-                 
-                },
-                responsive: {
+                responsive:
+                    {
                         details: {
                             type: 'column',
                             target: -1
@@ -93,38 +88,34 @@ function obtenerBienesCards()
 
 
                 "columns": [
-                     {
-                         "data": null, "render": function (data, type, full, meta)
+                     {"data": null, "render": function (data, type, full, meta)
                          {
-
                              return '<button class="btnVerGaleria btn btn-green"><i class="fa fa-file-photo-o"></i></button>'
                          }
                      },
 
-                    {
-                        "data": null,
-                        "className": 'details-control',
-                        "orderable": false,
-                        "defaultContent": '<a class="btn btn-info" style="padding:10px;font-size: 13px; line-height: 1em; width:35px; heigth:35px;"><i class="icon fa fa-list" style="text-align:center; margin:0;"></i></a>',
-
-
+                    { "data": null,
+                      "className": 'details-control',
+                      "orderable": false,
+                      "defaultContent": '<a class="btn btn-info" style="padding:10px;font-size: 13px; line-height: 1em; width:35px; heigth:35px;"><i class="icon fa fa-list" style="text-align:center; margin:0;"></i></a>',
                     },
-                    { "data": "NumeroLote" },
-                    {
-                        "data": "ValorPorLote", "render": function (data) {
 
-                            return "$ " + data;
+                    {"data": "NumeroLote" },
+                    {
+                        "data": "ValorPorLote", "render": function (data)
+                        {
+                             return "$ " + data;
                         }
                     },
                     { "data": "Descripcion" },
                     {
-                        "data": "ValorPorBien", "render": function (data) {
-
+                        "data": "ValorPorBien", "render": function (data)
+                        {
                             return "$ " + data;
                         }
                     },
-                    { "data": "Marca" },
-                    { "data": "Modelo" },
+                    { "data": "Marca", "visible": false},
+                    { "data": "Modelo", "visible":false },
                     
                 ],
 
@@ -254,7 +245,8 @@ function obtenerRutasFotoBien(idBien)
         dataType: 'json',
         async: true,
         data: JSON.stringify({ 'idBien': parseInt(idBien) }),
-        success: function (result) {
+        success: function (result)
+        {
             var FotosLote = result.d;
             console.log(FotosLote)
             $("#gallery").empty();
@@ -264,24 +256,16 @@ function obtenerRutasFotoBien(idBien)
                 var urlImagen = "http://172.19.2.102/Subastas/" + FotosLote[i].substring(2, FotosLote[i].length);
                 
                 $("#gallery").append('<img src=' + urlImagen + '>');
-                //$('.carousel-inner').empty().append('<div class="item"><img src=' + urlImagen + '><div class="carousel-caption"></div>   </div>');
-              
-                //$('.carousel-indicators').empty().append('<li data-target="#carruselLote" data-slide-to="' + i + '"></li>');
-               
-              
-              
             }
             jQuery("#gallery").unitegallery
             ({
                 slider_scale_mode: "down",
                 slider_scale_mode_fullscreen: "down",
             });
-            //$('.item').first().addClass('active');
-            //$('.carousel-indicators > li').first().addClass('active');
-            //$('#carruselLote').carousel();
         },
 
-        error: function (error) {
+        error: function (error)
+        {
             //console.log(error);
             OcultarMensajeCargando();
             //console.log("No se pudieron obtener los datos.");

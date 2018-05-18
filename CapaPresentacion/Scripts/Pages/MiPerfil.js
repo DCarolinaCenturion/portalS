@@ -8,16 +8,13 @@ var formData;
 $(document).ready(function () {
 
     cargarInformacionPerfil();
-    cargarFotoPerfilActiva();
-    //configurarUpload();
-    //$("input[type=file]").on("change", function () {
-    //    img_pathUrl(this)
-    //    alert("dd")
-    //});
-
+    cargarFotoPerfil();
+    temporizador();
+    
 });
 function cargarInformacionPerfil()
 {
+    MensajeCargando();
     var idComprador = parseInt($("#hdIdComprador").val());
 
     $.ajax({
@@ -41,7 +38,8 @@ function cargarInformacionPerfil()
             $("#txtEstado").val(datosPerfil.EstadoRepublica);
             $("#txtTipoPersona").val(datosPerfil.TipoPersona);
             $("#txtEstado").val(datosPerfil.EstadoRepublica);
-           
+            obtenerContadorOfertas();
+            OcultarMensajeCargando();
         },
 
         error: function (error) {
@@ -136,8 +134,9 @@ $('body').on('click', '#btnSubirFoto', function () {
 });
 
 //función para cargar la foto de perfil activa
-function cargarFotoPerfilActiva()
+function cargarFotoPerfil()
 {
+   
     $.ajax({
 
         type: "POST",
@@ -151,7 +150,7 @@ function cargarFotoPerfilActiva()
             var urlConfigurada = "../" + urlFotoActiva.substring(2, urlFotoActiva.length);
             console.log(urlConfigurada)
             $("#avatar1").attr("src", urlConfigurada);
-            $("#avatar2").attr("src", urlConfigurada);
+            //$("#avatar2").attr("src", urlConfigurada);
 
         },
 
@@ -171,7 +170,7 @@ function animarWidgets(elemento)
     $(elemento).addClass('animated flipInX');
 }
 
-$("#card1").on("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function (event) {
+$("#temporizadorSubasta").on("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function (event) {
     $(this).removeClass("animated flipInX");
 });
 $("#card2").on("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd", function (event) {
@@ -189,6 +188,64 @@ function actualizarDatosPerfil()
 {
 
 }
+
+function obtenerContadorOfertas()
+{
+    $.ajax({
+
+        type: "POST",
+        url: "MiPerfil.aspx/obtenerTotalOfertas",
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        async: true,
+        data: JSON.stringify({ 'idSubasta': parseInt($("#hdIdSubasta").val()), 'idComprador': parseInt($("#hdIdComprador").val()) }),
+        success: function (result)
+        {
+            var total = result.d;
+            $("#ofertas").text(total);
+        },
+
+        error: function (error)
+        {
+
+        }
+    });
+}
+
+function temporizador() {
+
+    $.ajax({
+
+        type: "POST",
+        url: "MiPerfil.aspx/obtenerFechaSubasta",
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        async: true,
+        data: JSON.stringify({ 'idSubasta': parseInt($("#hdIdSubasta").val()) }),
+        success: function (result) {
+            var s = result.d;
+            var date = new Date(parseInt(s.substr(6)));
+            var fechaRe = date.getFullYear() + "-" +
+                  ("0" + (date.getMonth() + 1)).slice(-2) + "-" +
+                  ("0" + date.getDate()).slice(-2) + " " + date.getHours() + ":" +
+                  date.getMinutes();
+
+            var fechaSubasta = fechaRe.replace(/\-/g, "/");
+            console.log(s)
+            $("#temporizadorSubasta").countdown(fechaSubasta, function (event) {
+                $("#txtTiempo").text(
+                  event.strftime(' %D días, %H horas, %M minutos y %S segundos ')
+                );
+            });
+
+        },
+
+        error: function (error) {
+
+        }
+    });
+}
+
 
 
           

@@ -11,10 +11,11 @@
     <link href="../Scripts/Plantilla/vendor/dataTables.fontAwesome/index.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Acciones" runat="server">
+     <input type="hidden" id="hdIdSubasta" runat="server" />
+    <input type="hidden" id="hdIdComprador" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Contenido" runat="server">
-    <input type="hidden" id="hdIdSubasta" runat="server" />
-    <input type="hidden" id="hdIdComprador" runat="server" />
+   
     <div class="row">
         <div class="col-lg-4">
                   <div class="panel widget bg-default" style="height:145px;" id="temporizadorSubasta">
@@ -57,10 +58,10 @@
             
             <div class="panel panel-default">
               <div class="panel-heading">
-
+                  <h4 class="panel-title">Lotes a ofertar</h4>
               </div>
               <div class="panel-body">
-                  <table id="tblBienesPSubasta" class="table table-striped table-bordered table-hover">
+                  <table id="tblBienesPSubasta" class="table-striped table-bordered table-condensed">
 
                   </table>
               </div>

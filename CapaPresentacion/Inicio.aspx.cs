@@ -39,7 +39,7 @@ namespace CapaPresentacion
                     Session["NombreComprador"] = existe.Nombre;
                     //Session["contrasenaC"] =;
                     Session["IdComprador"] = existe.IdComprador;
-                    Response.Redirect("Subasta/ListadoLotesSubasta.aspx");
+                    Response.Redirect("Perfil/MiPerfil.aspx");
                 }
                 else
                 {

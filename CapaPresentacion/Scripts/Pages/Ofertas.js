@@ -11,9 +11,6 @@ function cargarTblOfertas()
 
     $("#tblOfertas").empty();
     var myTableBC = jQuery("#tblOfertas");
-
-
-
     jQuery("<thead><tr><th style='width:10%'></th><th style='width:50%'></th<th></th><th style='width:10%'>No. Lote</th><th style='width:30%'>Valor Lote</th>><th></th></tr></thead>").appendTo(myTableBC);
     jQuery("<tfoot><tr style='background-color:#5D5E5E;'><th colspan='4' style='text-align:center;'>Total:</th><th></th></tr></tfoot>").appendTo(myTableBC);
 
@@ -37,7 +34,7 @@ function cargarTblOfertas()
 
 
             table = $('#tblOfertas').DataTable({
-                //footer
+                "destroy":true,
                 "footerCallback": function ( row, data, start, end, display ) {
                     var api = this.api(), data;
  
@@ -129,22 +126,6 @@ function cargarTblOfertas()
             }).search('')
     .columns().search('')
     .draw();
-
-
-            //table.columns().every(function () {
-            //    var that = this;
-
-            //    $('input.filtro', this.footer()).on('keyup change', function (e) {
-
-            //        var keyCode = e.keyCode || e.which;
-
-            //        if (that.search() !== this.value) {
-            //            that
-            //                .search(this.value)
-            //                .draw();
-            //        }
-            //    });
-            //});
 
             $('#tblOfertas tbody').on('click', 'button.btnActualizarOf', function (event) {
                 event.preventDefault();
@@ -252,8 +233,11 @@ function cargarTblOfertas()
 
 }
 
-$("#btnActualizarOferta").click(function () {
+$("#btnActualizarOferta").click(function ()
+{
     mensajeConfirmacionActualizarOferta();
+    $("#myModal1").modal("hide");
+    //cargarTblOfertas();
     return false;
 });
 

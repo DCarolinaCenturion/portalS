@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFLogin" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.19.2.102/Servicio/Servicio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.19.2.102/Servicio/Servicio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.19.2.102/Servicio/Servicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Objetos" />
+      <xsd:import schemaLocation="http://172.19.2.102/Servicio/Servicio.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILogin_ComprobarAccesoCursosEnLinea_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComprobarAccesoCursosEnLinea" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ComprobarAccesoCursosEnLinea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComprobarAccesoCursosEnLineaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorTokenSeguro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorTokenSeguro" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorTokenSeguro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorTokenSeguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorUsuarioContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorUsuarioContraseña" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorUsuarioContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorUsuarioContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorNombreUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorNombreUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorNombreUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorNombreUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_CerrarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_CerrarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ActualizarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ActualizarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_RegistrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_RegistrarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorRFC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorRFC" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorRFC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorRFCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorClasificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorClasificacion" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerUsuarioPorClasificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioPorClasificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerTokenPorUsuarioContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenPorUsuarioContraseña" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerTokenPorUsuarioContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenPorUsuarioContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerTokenPorIdUsuarioSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenPorIdUsuarioSistema" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerTokenPorIdUsuarioSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenPorIdUsuarioSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_SistemasObtenerVigentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:SistemasObtenerVigentes" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_SistemasObtenerVigentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SistemasObtenerVigentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_SistemaObtenerPorWhereClause_InputMessage">
+    <wsdl:part name="parameters" element="tns:SistemaObtenerPorWhereClause" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_SistemaObtenerPorWhereClause_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SistemaObtenerPorWhereClauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerVigentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerVigentes" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerVigentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerVigentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerPorSistema_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerPorSistema" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerPorSistema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerPorSistemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_GuardarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarMensaje" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_GuardarMensaje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajeEliminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajeEliminar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajeEliminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajeEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerParaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerParaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerParaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerParaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_GuardarMensajeParaUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarMensajeParaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_GuardarMensajeParaUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarMensajeParaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajeActualizarEstatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajeActualizarEstatus" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajeActualizarEstatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajeActualizarEstatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerSiguientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerSiguientes" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_MensajesObtenerSiguientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MensajesObtenerSiguientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_GuardarConexionHub_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarConexionHub" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_GuardarConexionHub_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarConexionHubResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EliminarConexionHub_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarConexionHub" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EliminarConexionHub_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarConexionHubResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_AsistenciasObtenerPorEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsistenciasObtenerPorEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_AsistenciasObtenerPorEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsistenciasObtenerPorEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerFaltas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFaltas" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerFaltas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFaltasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_RamoObtenerLstActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RamoObtenerLstActivos" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_RamoObtenerLstActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RamoObtenerLstActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_RamoObtenerPorIdOrganismo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RamoObtenerPorIdOrganismo" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_RamoObtenerPorIdOrganismo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RamoObtenerPorIdOrganismoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_UnidadObtenerLstActivas_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadObtenerLstActivas" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_UnidadObtenerLstActivas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadObtenerLstActivasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_UnidadObtenerTodasPorRamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadObtenerTodasPorRamo" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_UnidadObtenerTodasPorRamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnidadObtenerTodasPorRamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_NominaObtenerCumpleañosPorMesRamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NominaObtenerCumpleañosPorMesRamo" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_NominaObtenerCumpleañosPorMesRamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NominaObtenerCumpleañosPorMesRamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EnviarCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreo" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EnviarCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EnvioFelicitacionHonomastico_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnvioFelicitacionHonomastico" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EnvioFelicitacionHonomastico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnvioFelicitacionHonomasticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_NuevaContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:NuevaContraseña" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_NuevaContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NuevaContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoObtenerPorNombreUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoObtenerPorNombreUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoObtenerPorNombreUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoObtenerPorNombreUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoGuardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoGuardar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoGuardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoGuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoObtenerPorIdUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoObtenerPorIdUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoObtenerPorIdUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoObtenerPorIdUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoActualizar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoObtenerTipos_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoObtenerTipos" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoObtenerTipos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoObtenerTiposResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoEliminarlst_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoEliminarlst" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoEliminarlst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoEliminarlstResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoGuardarPorUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoGuardarPorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoGuardarPorUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoGuardarPorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoActualizarPorUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoActualizarPorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelefonoActualizarPorUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelefonoActualizarPorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelelefonoEliminarPorUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:TelelefonoEliminarPorUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_TelelefonoEliminarPorUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TelelefonoEliminarPorUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ConfiguracionGuardar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracionGuardar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ConfiguracionGuardar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracionGuardarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ConfiguracionActualizar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracionActualizar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ConfiguracionActualizar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracionActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ConfiguracionObtenerPorIdUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracionObtenerPorIdUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ConfiguracionObtenerPorIdUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfiguracionObtenerPorIdUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_Encriptar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Encriptar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_Encriptar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncriptarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_DesEncriptar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DesEncriptar" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_DesEncriptar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DesEncriptarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EmpleadoGuardarCorreccion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmpleadoGuardarCorreccion" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EmpleadoGuardarCorreccion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmpleadoGuardarCorreccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EmpleadoObtenerPorNumeroEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmpleadoObtenerPorNumeroEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EmpleadoObtenerPorNumeroEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmpleadoObtenerPorNumeroEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EmpleadoObtenerPorIdUnidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmpleadoObtenerPorIdUnidad" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_EmpleadoObtenerPorIdUnidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmpleadoObtenerPorIdUnidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_BuscarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_BuscarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_OficinaObtenerPorClaveRamoUnidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:OficinaObtenerPorClaveRamoUnidad" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_OficinaObtenerPorClaveRamoUnidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OficinaObtenerPorClaveRamoUnidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_OrganismoObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganismoObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_OrganismoObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganismoObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_OrganismosActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrganismosActivos" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_OrganismosActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrganismosActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_addEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:addEvent" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_addEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_getEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEvents" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_getEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_updateEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateEvent" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_updateEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_updateEventTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateEventTime" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_updateEventTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateEventTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_deleteEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteEvent" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_deleteEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_getEventsGenerales_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsGenerales" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_getEventsGenerales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsGeneralesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerEventosPorWhereClause_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEventosPorWhereClause" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerEventosPorWhereClause_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEventosPorWhereClauseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerDiaLaboral_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDiaLaboral" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerDiaLaboral_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDiaLaboralResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerCantidadDiasLaborales_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCantidadDiasLaborales" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerCantidadDiasLaborales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCantidadDiasLaboralesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerDiasInhabilesPorAño_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDiasInhabilesPorAño" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ObtenerDiasInhabilesPorAño_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDiasInhabilesPorAñoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ValidarCorreoElectronico_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCorreoElectronico" />
+  </wsdl:message>
+  <wsdl:message name="ILogin_ValidarCorreoElectronico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCorreoElectronicoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILogin">
+    <wsdl:operation name="ComprobarAccesoCursosEnLinea">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ComprobarAccesoCursosEnLinea" message="tns:ILogin_ComprobarAccesoCursosEnLinea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ComprobarAccesoCursosEnLineaResponse" message="tns:ILogin_ComprobarAccesoCursosEnLinea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorTokenSeguro">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorTokenSeguro" message="tns:ILogin_ObtenerUsuarioPorTokenSeguro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorTokenSeguroResponse" message="tns:ILogin_ObtenerUsuarioPorTokenSeguro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorUsuarioContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorUsuarioContraseña" message="tns:ILogin_ObtenerUsuarioPorUsuarioContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorUsuarioContraseñaResponse" message="tns:ILogin_ObtenerUsuarioPorUsuarioContraseña_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorNombreUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorNombreUsuario" message="tns:ILogin_ObtenerUsuarioPorNombreUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorNombreUsuarioResponse" message="tns:ILogin_ObtenerUsuarioPorNombreUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/CerrarSesion" message="tns:ILogin_CerrarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/CerrarSesionResponse" message="tns:ILogin_CerrarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ActualizarUsuario" message="tns:ILogin_ActualizarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ActualizarUsuarioResponse" message="tns:ILogin_ActualizarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/RegistrarUsuario" message="tns:ILogin_RegistrarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/RegistrarUsuarioResponse" message="tns:ILogin_RegistrarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorRFC">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorRFC" message="tns:ILogin_ObtenerUsuarioPorRFC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorRFCResponse" message="tns:ILogin_ObtenerUsuarioPorRFC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorClasificacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorClasificacion" message="tns:ILogin_ObtenerUsuarioPorClasificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerUsuarioPorClasificacionResponse" message="tns:ILogin_ObtenerUsuarioPorClasificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenPorUsuarioContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerTokenPorUsuarioContraseña" message="tns:ILogin_ObtenerTokenPorUsuarioContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerTokenPorUsuarioContraseñaResponse" message="tns:ILogin_ObtenerTokenPorUsuarioContraseña_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenPorIdUsuarioSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerTokenPorIdUsuarioSistema" message="tns:ILogin_ObtenerTokenPorIdUsuarioSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerTokenPorIdUsuarioSistemaResponse" message="tns:ILogin_ObtenerTokenPorIdUsuarioSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SistemasObtenerVigentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/SistemasObtenerVigentes" message="tns:ILogin_SistemasObtenerVigentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/SistemasObtenerVigentesResponse" message="tns:ILogin_SistemasObtenerVigentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SistemaObtenerPorWhereClause">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/SistemaObtenerPorWhereClause" message="tns:ILogin_SistemaObtenerPorWhereClause_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/SistemaObtenerPorWhereClauseResponse" message="tns:ILogin_SistemaObtenerPorWhereClause_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerVigentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerVigentes" message="tns:ILogin_MensajesObtenerVigentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerVigentesResponse" message="tns:ILogin_MensajesObtenerVigentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerPorSistema">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerPorSistema" message="tns:ILogin_MensajesObtenerPorSistema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerPorSistemaResponse" message="tns:ILogin_MensajesObtenerPorSistema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/GuardarMensaje" message="tns:ILogin_GuardarMensaje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/GuardarMensajeResponse" message="tns:ILogin_GuardarMensaje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajeEliminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/MensajeEliminar" message="tns:ILogin_MensajeEliminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/MensajeEliminarResponse" message="tns:ILogin_MensajeEliminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerParaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerParaUsuario" message="tns:ILogin_MensajesObtenerParaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerParaUsuarioResponse" message="tns:ILogin_MensajesObtenerParaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMensajeParaUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/GuardarMensajeParaUsuario" message="tns:ILogin_GuardarMensajeParaUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/GuardarMensajeParaUsuarioResponse" message="tns:ILogin_GuardarMensajeParaUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajeActualizarEstatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/MensajeActualizarEstatus" message="tns:ILogin_MensajeActualizarEstatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/MensajeActualizarEstatusResponse" message="tns:ILogin_MensajeActualizarEstatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerSiguientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerSiguientes" message="tns:ILogin_MensajesObtenerSiguientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/MensajesObtenerSiguientesResponse" message="tns:ILogin_MensajesObtenerSiguientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarConexionHub">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/GuardarConexionHub" message="tns:ILogin_GuardarConexionHub_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/GuardarConexionHubResponse" message="tns:ILogin_GuardarConexionHub_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConexionHub">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/EliminarConexionHub" message="tns:ILogin_EliminarConexionHub_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EliminarConexionHubResponse" message="tns:ILogin_EliminarConexionHub_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsistenciasObtenerPorEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/AsistenciasObtenerPorEmpleado" message="tns:ILogin_AsistenciasObtenerPorEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/AsistenciasObtenerPorEmpleadoResponse" message="tns:ILogin_AsistenciasObtenerPorEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFaltas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerFaltas" message="tns:ILogin_ObtenerFaltas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerFaltasResponse" message="tns:ILogin_ObtenerFaltas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RamoObtenerLstActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/RamoObtenerLstActivos" message="tns:ILogin_RamoObtenerLstActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/RamoObtenerLstActivosResponse" message="tns:ILogin_RamoObtenerLstActivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RamoObtenerPorIdOrganismo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/RamoObtenerPorIdOrganismo" message="tns:ILogin_RamoObtenerPorIdOrganismo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/RamoObtenerPorIdOrganismoResponse" message="tns:ILogin_RamoObtenerPorIdOrganismo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnidadObtenerLstActivas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/UnidadObtenerLstActivas" message="tns:ILogin_UnidadObtenerLstActivas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/UnidadObtenerLstActivasResponse" message="tns:ILogin_UnidadObtenerLstActivas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnidadObtenerTodasPorRamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/UnidadObtenerTodasPorRamo" message="tns:ILogin_UnidadObtenerTodasPorRamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/UnidadObtenerTodasPorRamoResponse" message="tns:ILogin_UnidadObtenerTodasPorRamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NominaObtenerCumpleañosPorMesRamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/NominaObtenerCumpleañosPorMesRamo" message="tns:ILogin_NominaObtenerCumpleañosPorMesRamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/NominaObtenerCumpleañosPorMesRamoResponse" message="tns:ILogin_NominaObtenerCumpleañosPorMesRamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/EnviarCorreo" message="tns:ILogin_EnviarCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EnviarCorreoResponse" message="tns:ILogin_EnviarCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnvioFelicitacionHonomastico">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/EnvioFelicitacionHonomastico" message="tns:ILogin_EnvioFelicitacionHonomastico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EnvioFelicitacionHonomasticoResponse" message="tns:ILogin_EnvioFelicitacionHonomastico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NuevaContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/NuevaContraseña" message="tns:ILogin_NuevaContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/NuevaContraseñaResponse" message="tns:ILogin_NuevaContraseña_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoObtenerPorNombreUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoObtenerPorNombreUsuario" message="tns:ILogin_TelefonoObtenerPorNombreUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoObtenerPorNombreUsuarioResponse" message="tns:ILogin_TelefonoObtenerPorNombreUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoGuardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoGuardar" message="tns:ILogin_TelefonoGuardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoGuardarResponse" message="tns:ILogin_TelefonoGuardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoObtenerPorIdUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoObtenerPorIdUsuario" message="tns:ILogin_TelefonoObtenerPorIdUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoObtenerPorIdUsuarioResponse" message="tns:ILogin_TelefonoObtenerPorIdUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoActualizar" message="tns:ILogin_TelefonoActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoActualizarResponse" message="tns:ILogin_TelefonoActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoObtenerTipos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoObtenerTipos" message="tns:ILogin_TelefonoObtenerTipos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoObtenerTiposResponse" message="tns:ILogin_TelefonoObtenerTipos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoEliminarlst">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoEliminarlst" message="tns:ILogin_TelefonoEliminarlst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoEliminarlstResponse" message="tns:ILogin_TelefonoEliminarlst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoGuardarPorUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoGuardarPorUsuario" message="tns:ILogin_TelefonoGuardarPorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoGuardarPorUsuarioResponse" message="tns:ILogin_TelefonoGuardarPorUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoActualizarPorUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelefonoActualizarPorUsuario" message="tns:ILogin_TelefonoActualizarPorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelefonoActualizarPorUsuarioResponse" message="tns:ILogin_TelefonoActualizarPorUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TelelefonoEliminarPorUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/TelelefonoEliminarPorUsuario" message="tns:ILogin_TelelefonoEliminarPorUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/TelelefonoEliminarPorUsuarioResponse" message="tns:ILogin_TelelefonoEliminarPorUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracionGuardar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ConfiguracionGuardar" message="tns:ILogin_ConfiguracionGuardar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ConfiguracionGuardarResponse" message="tns:ILogin_ConfiguracionGuardar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracionActualizar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ConfiguracionActualizar" message="tns:ILogin_ConfiguracionActualizar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ConfiguracionActualizarResponse" message="tns:ILogin_ConfiguracionActualizar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracionObtenerPorIdUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ConfiguracionObtenerPorIdUsuario" message="tns:ILogin_ConfiguracionObtenerPorIdUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ConfiguracionObtenerPorIdUsuarioResponse" message="tns:ILogin_ConfiguracionObtenerPorIdUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/Encriptar" message="tns:ILogin_Encriptar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EncriptarResponse" message="tns:ILogin_Encriptar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DesEncriptar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/DesEncriptar" message="tns:ILogin_DesEncriptar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/DesEncriptarResponse" message="tns:ILogin_DesEncriptar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmpleadoGuardarCorreccion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/EmpleadoGuardarCorreccion" message="tns:ILogin_EmpleadoGuardarCorreccion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EmpleadoGuardarCorreccionResponse" message="tns:ILogin_EmpleadoGuardarCorreccion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmpleadoObtenerPorNumeroEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/EmpleadoObtenerPorNumeroEmpleado" message="tns:ILogin_EmpleadoObtenerPorNumeroEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EmpleadoObtenerPorNumeroEmpleadoResponse" message="tns:ILogin_EmpleadoObtenerPorNumeroEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmpleadoObtenerPorIdUnidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/EmpleadoObtenerPorIdUnidad" message="tns:ILogin_EmpleadoObtenerPorIdUnidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/EmpleadoObtenerPorIdUnidadResponse" message="tns:ILogin_EmpleadoObtenerPorIdUnidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/BuscarEmpleado" message="tns:ILogin_BuscarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/BuscarEmpleadoResponse" message="tns:ILogin_BuscarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerTodos" message="tns:ILogin_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerTodosResponse" message="tns:ILogin_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OficinaObtenerPorClaveRamoUnidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/OficinaObtenerPorClaveRamoUnidad" message="tns:ILogin_OficinaObtenerPorClaveRamoUnidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/OficinaObtenerPorClaveRamoUnidadResponse" message="tns:ILogin_OficinaObtenerPorClaveRamoUnidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganismoObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/OrganismoObtenerTodos" message="tns:ILogin_OrganismoObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/OrganismoObtenerTodosResponse" message="tns:ILogin_OrganismoObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganismosActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/OrganismosActivos" message="tns:ILogin_OrganismosActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/OrganismosActivosResponse" message="tns:ILogin_OrganismosActivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/addEvent" message="tns:ILogin_addEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/addEventResponse" message="tns:ILogin_addEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/getEvents" message="tns:ILogin_getEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/getEventsResponse" message="tns:ILogin_getEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/updateEvent" message="tns:ILogin_updateEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/updateEventResponse" message="tns:ILogin_updateEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEventTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/updateEventTime" message="tns:ILogin_updateEventTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/updateEventTimeResponse" message="tns:ILogin_updateEventTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/deleteEvent" message="tns:ILogin_deleteEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/deleteEventResponse" message="tns:ILogin_deleteEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEventsGenerales">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/getEventsGenerales" message="tns:ILogin_getEventsGenerales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/getEventsGeneralesResponse" message="tns:ILogin_getEventsGenerales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEventosPorWhereClause">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerEventosPorWhereClause" message="tns:ILogin_ObtenerEventosPorWhereClause_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerEventosPorWhereClauseResponse" message="tns:ILogin_ObtenerEventosPorWhereClause_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiaLaboral">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerDiaLaboral" message="tns:ILogin_ObtenerDiaLaboral_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerDiaLaboralResponse" message="tns:ILogin_ObtenerDiaLaboral_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCantidadDiasLaborales">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerCantidadDiasLaborales" message="tns:ILogin_ObtenerCantidadDiasLaborales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerCantidadDiasLaboralesResponse" message="tns:ILogin_ObtenerCantidadDiasLaborales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiasInhabilesPorAño">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ObtenerDiasInhabilesPorAño" message="tns:ILogin_ObtenerDiasInhabilesPorAño_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ObtenerDiasInhabilesPorAñoResponse" message="tns:ILogin_ObtenerDiasInhabilesPorAño_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCorreoElectronico">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/ValidarCorreoElectronico" message="tns:ILogin_ValidarCorreoElectronico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogin/ValidarCorreoElectronicoResponse" message="tns:ILogin_ValidarCorreoElectronico_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILogin" type="tns:ILogin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ComprobarAccesoCursosEnLinea">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ComprobarAccesoCursosEnLinea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorTokenSeguro">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerUsuarioPorTokenSeguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorUsuarioContraseña">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerUsuarioPorUsuarioContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorNombreUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerUsuarioPorNombreUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <soap:operation soapAction="http://tempuri.org/ILogin/CerrarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ActualizarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/RegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorRFC">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerUsuarioPorRFC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioPorClasificacion">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerUsuarioPorClasificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenPorUsuarioContraseña">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerTokenPorUsuarioContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenPorIdUsuarioSistema">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerTokenPorIdUsuarioSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SistemasObtenerVigentes">
+      <soap:operation soapAction="http://tempuri.org/ILogin/SistemasObtenerVigentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SistemaObtenerPorWhereClause">
+      <soap:operation soapAction="http://tempuri.org/ILogin/SistemaObtenerPorWhereClause" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerVigentes">
+      <soap:operation soapAction="http://tempuri.org/ILogin/MensajesObtenerVigentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerPorSistema">
+      <soap:operation soapAction="http://tempuri.org/ILogin/MensajesObtenerPorSistema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMensaje">
+      <soap:operation soapAction="http://tempuri.org/ILogin/GuardarMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajeEliminar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/MensajeEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerParaUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/MensajesObtenerParaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMensajeParaUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/GuardarMensajeParaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajeActualizarEstatus">
+      <soap:operation soapAction="http://tempuri.org/ILogin/MensajeActualizarEstatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MensajesObtenerSiguientes">
+      <soap:operation soapAction="http://tempuri.org/ILogin/MensajesObtenerSiguientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarConexionHub">
+      <soap:operation soapAction="http://tempuri.org/ILogin/GuardarConexionHub" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarConexionHub">
+      <soap:operation soapAction="http://tempuri.org/ILogin/EliminarConexionHub" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsistenciasObtenerPorEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ILogin/AsistenciasObtenerPorEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFaltas">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerFaltas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RamoObtenerLstActivos">
+      <soap:operation soapAction="http://tempuri.org/ILogin/RamoObtenerLstActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RamoObtenerPorIdOrganismo">
+      <soap:operation soapAction="http://tempuri.org/ILogin/RamoObtenerPorIdOrganismo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnidadObtenerLstActivas">
+      <soap:operation soapAction="http://tempuri.org/ILogin/UnidadObtenerLstActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnidadObtenerTodasPorRamo">
+      <soap:operation soapAction="http://tempuri.org/ILogin/UnidadObtenerTodasPorRamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NominaObtenerCumpleañosPorMesRamo">
+      <soap:operation soapAction="http://tempuri.org/ILogin/NominaObtenerCumpleañosPorMesRamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCorreo">
+      <soap:operation soapAction="http://tempuri.org/ILogin/EnviarCorreo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvioFelicitacionHonomastico">
+      <soap:operation soapAction="http://tempuri.org/ILogin/EnvioFelicitacionHonomastico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NuevaContraseña">
+      <soap:operation soapAction="http://tempuri.org/ILogin/NuevaContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoObtenerPorNombreUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoObtenerPorNombreUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoGuardar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoGuardar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoObtenerPorIdUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoObtenerPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoActualizar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoObtenerTipos">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoObtenerTipos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoEliminarlst">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoEliminarlst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoGuardarPorUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoGuardarPorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelefonoActualizarPorUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelefonoActualizarPorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TelelefonoEliminarPorUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/TelelefonoEliminarPorUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracionGuardar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ConfiguracionGuardar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracionActualizar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ConfiguracionActualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfiguracionObtenerPorIdUsuario">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ConfiguracionObtenerPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/Encriptar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesEncriptar">
+      <soap:operation soapAction="http://tempuri.org/ILogin/DesEncriptar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmpleadoGuardarCorreccion">
+      <soap:operation soapAction="http://tempuri.org/ILogin/EmpleadoGuardarCorreccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmpleadoObtenerPorNumeroEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ILogin/EmpleadoObtenerPorNumeroEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmpleadoObtenerPorIdUnidad">
+      <soap:operation soapAction="http://tempuri.org/ILogin/EmpleadoObtenerPorIdUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ILogin/BuscarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OficinaObtenerPorClaveRamoUnidad">
+      <soap:operation soapAction="http://tempuri.org/ILogin/OficinaObtenerPorClaveRamoUnidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganismoObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/ILogin/OrganismoObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganismosActivos">
+      <soap:operation soapAction="http://tempuri.org/ILogin/OrganismosActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEvent">
+      <soap:operation soapAction="http://tempuri.org/ILogin/addEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <soap:operation soapAction="http://tempuri.org/ILogin/getEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEvent">
+      <soap:operation soapAction="http://tempuri.org/ILogin/updateEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEventTime">
+      <soap:operation soapAction="http://tempuri.org/ILogin/updateEventTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEvent">
+      <soap:operation soapAction="http://tempuri.org/ILogin/deleteEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsGenerales">
+      <soap:operation soapAction="http://tempuri.org/ILogin/getEventsGenerales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEventosPorWhereClause">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerEventosPorWhereClause" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiaLaboral">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerDiaLaboral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCantidadDiasLaborales">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerCantidadDiasLaborales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDiasInhabilesPorAño">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ObtenerDiasInhabilesPorAño" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCorreoElectronico">
+      <soap:operation soapAction="http://tempuri.org/ILogin/ValidarCorreoElectronico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFLogin">
+    <wsdl:port name="BasicHttpBinding_ILogin" binding="tns:BasicHttpBinding_ILogin">
+      <soap:address location="http://172.19.2.102/Servicio/Servicio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

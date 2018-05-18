@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="CargaComprobante.aspx" />
     <Content Include="FotosPerfil\blob.png" />
+    <Content Include="FotosPerfil\sin_perfil.png" />
     <Content Include="HojasEstilos\estilosPortal\portal.css" />
     <Content Include="HojasEstilos\Plantilla\app-rtl.css" />
     <Content Include="HojasEstilos\Plantilla\app.css" />
@@ -493,6 +494,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ServicioUsuarios\Servicio.disco" />
+    <None Include="Service References\ServicioUsuarios\configuration91.svcinfo" />
+    <None Include="Service References\ServicioUsuarios\configuration.svcinfo" />
+    <None Include="Service References\ServicioUsuarios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Servicios\ServicioSistema.asmx" />
     <Content Include="Subasta\ListadoDetalleLote.aspx" />
     <Content Include="Subasta\ListadoLotesSubasta.aspx" />
@@ -565,6 +573,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServicioUsuarios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\ServicioSistema.asmx.cs">
       <DependentUpon>ServicioSistema.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -630,6 +643,61 @@
     <None Include="Service References\ServiceSubasta\ServiceSubasta3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Asistencias.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Configuracion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Cumpleaño.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.EmpleadoSSO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.FullCalendarEventos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Mensaje.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Oficina.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Organismo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Ramo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Sistema.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Telefono.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Token.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.Unidad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServicioUsuarios\CapaPresentacion.ServicioUsuarios.UsuarioSSO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServicioUsuarios\Servicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioUsuarios\Servicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioUsuarios\Servicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioUsuarios\Servicio3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicioUsuarios\WCFLogin.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -653,6 +721,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServicePortalSubasta\" />
     <WCFMetadataStorage Include="Service References\ServiceSubasta\" />
+    <WCFMetadataStorage Include="Service References\ServicioUsuarios\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HojasEstilos\Plantilla\vendor\uniteGallery\media\" />

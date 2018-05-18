@@ -95,24 +95,28 @@
                   <div class="row">
                      <div class="col-sm-6">
                         <!-- START widget-->
-                        <div class="panel widget" onmouseover="animarWidgets(this)" id="card1">
-                           <div class="panel-body bg-info text-center">
-                              <div class="text-lg m0">30</div>
-                              <p>Ofertas Realizadas</p>
-                              <div class="mb-lg"></div>
-                              <em class="fa fa-dollar"></em>
-                           </div>
-                        </div>
+                        <div class="panel widget bg-success " style="height:145px;" id="temporizadorSubasta"  onmouseover="animarWidgets(this)">
+                      <div class="row row-table">
+                          <div class="col-xs-4 text-center bg-success-dark pv-lg">
+                              <em class="fa fa-clock-o fa-4x"></em>
+                          </div>
+                          <div class="col-xs-8 pv-lg">
+                              <div class="h4 m0 text-bold" id="txtTiempo" ></div>
+                              <div class="text-uppercase">Tiempo para la subasta</div>
+
+                          </div>
+                      </div>
+                  </div>
                         <!-- END widget-->
                      </div>
                      <div class="col-sm-6">
                         <!-- START widget-->
                         <div class="panel widget" onmouseover="animarWidgets(this)" id="card2">
-                           <div class="panel-body bg-primary text-center">
+                           <div class="panel-body bg-purple text-center">
                               <div class="text-lg m0">12</div>
                               <p>Lotes visitados</p>
                                <div class="mb-lg"></div>
-                              <em class="fa fa-eye"></em>
+                              <em class="fa fa-eye  text-alph"></em>
                            </div>
                         </div>
                         <!-- END widget-->
@@ -120,34 +124,9 @@
                   </div>
                   <div class="row">
                      <div class="col-sm-6">
-                        <!-- START widget-->
-                        <div class="panel widget" onmouseover="animarWidgets(this)" id="card3">
-                           <div class="panel-body bg-danger text-center">
-                              <div class="radial-bar radial-bar-40 radial-bar radial-bar-danger m0">
-                                 <img src="img/user/03.jpg" alt="">
-                              </div>
-                              <p>
-                                 <strong>40%</strong>
-                                 <span>complete</span>
-                              </p>
-                           </div>
-                        </div>
-                        <!-- END widget-->
+                       
                      </div>
                      <div class="col-sm-6">
-                        <!-- START widget-->
-                        <div class="panel widget" onmouseover="animarWidgets(this);" id="card4">
-                           <div class="panel-body bg-purple text-center">
-                              <p>
-                                 <img src="img/user/08.jpg" alt="" class="img-rounded thumb80">
-                              </p>
-                              <p>
-                                 <strong>Mika</strong>
-                                 <span>is now following you</span>
-                              </p>
-                           </div>
-                        </div>
-                        <!-- END widget-->
                      </div>
                   </div>
               
@@ -271,4 +250,5 @@
     <script src="../Scripts/Pages/MiPerfil.js"></script>
     <script src="../Scripts/Plantilla/vendor/Cropper/cropper.js"></script>
     <script src="../Scripts/Plantilla/vendor/UploadFile/jquery.uploadfile.js"></script>
+    <script src="../Scripts/Plantilla/vendor/jQuery.countdown-master/src/countdown.js"></script>
 </asp:Content>

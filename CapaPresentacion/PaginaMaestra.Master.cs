@@ -25,6 +25,7 @@ namespace Plantilla
                         CapaPresentacion.ServiceSubasta.Subasta subasta = servicioSubasta.obtenerSubastaProceso();
                         hdIdSubasta.Value = subasta.Id.ToString();
                         hdNombreComprador.Value = (Session["NombreComprador"].ToString());
+                        cargarInformacionPerfil();
                 }
               
 
@@ -95,6 +96,23 @@ namespace Plantilla
             ScriptManager1.AsyncPostBackErrorMessage = e.Exception.Message;
         }
 
+
+        public  void cargarInformacionPerfil()
+        {
+            try
+            {
+                int idComprador = Convert.ToInt32(hdIdComprador.Value);
+                Entidades.VCompradores comprador = Negocio.obtenerInformacionCompradorBL.obtenerPerfil(idComprador);
+                lblNombreCorto.Text = comprador.Nombre;
+
+            }
+            catch (Exception excepcion)
+            {
+
+                throw excepcion;
+            }
+
+        }
 
        
     }
