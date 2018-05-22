@@ -21,8 +21,8 @@ function obtenerBienesSCompradores()
 
 
 
-    jQuery("<thead><tr><th></th><th ></th><th > No. Lote</th><th >No. de Bienes</th><th>Valor del Lote</th></tr></thead>").appendTo(myTableBC);
-    jQuery("<tfoot><tr><th></th><th></th><th class='Filter' >No. Lote</th><th></th><th></th>" +
+    jQuery("<thead><tr><th></th><th ></th><th > No. Lote</th><th>Descripción</th><th >No. de Bienes</th><th>Valor del Lote</th></tr></thead>").appendTo(myTableBC);
+    jQuery("<tfoot><tr><th></th><th></th><th class='Filter' >No. Lote</th></th></th><th></th><th></th>" +
             "</tr></tfoot>").appendTo(myTableBC);
 
 
@@ -69,12 +69,12 @@ function obtenerBienesSCompradores()
                     { "data": "IdSubasta", "visible": false },
                     { "data": "NumLote" },
                     { "data": "Cantidad" },
-                    {
-                        "data": "ValorLote", "render": function (data) {
+                    {"data": "ValorLote", "render": function (data) {
 
                             return "$ " + data;
                         }
                     },
+                    {"data": "Descripcion"}
                     
                 ],
 

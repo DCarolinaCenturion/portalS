@@ -95,7 +95,7 @@
                   <div class="row">
                      <div class="col-sm-6">
                         <!-- START widget-->
-                        <div class="panel widget bg-success " style="height:145px;" id="temporizadorSubasta"  onmouseover="animarWidgets(this)">
+                    <div class="panel widget bg-success " style="height:145px;" id="temporizadorSubasta"  onmouseover="animarWidgets(this)">
                       <div class="row row-table">
                           <div class="col-xs-4 text-center bg-success-dark pv-lg">
                               <em class="fa fa-clock-o fa-4x"></em>
@@ -111,14 +111,18 @@
                      </div>
                      <div class="col-sm-6">
                         <!-- START widget-->
-                        <div class="panel widget" onmouseover="animarWidgets(this)" id="card2">
-                           <div class="panel-body bg-purple text-center">
-                              <div class="text-lg m0">12</div>
-                              <p>Lotes visitados</p>
-                               <div class="mb-lg"></div>
-                              <em class="fa fa-eye  text-alph"></em>
-                           </div>
-                        </div>
+                        <div class="panel widget bg-purple" style="height:145px;" id="card1"  onmouseover="animarWidgets(this)">
+                      <div class="row row-table">
+                          <div class="col-xs-4 text-center bg-purple-dark pv-lg">
+                              <em class="fa fa-dollar fa-4x"></em>
+                          </div>
+                          <div class="col-xs-8 pv-lg">
+                              <div class="h4 m0 text-bold" id="numeroOfertas" ></div>
+                              <div class="text-uppercase">Ofertas Realizadas</div>
+
+                          </div>
+                      </div>
+                  </div>
                         <!-- END widget-->
                      </div>
                   </div>

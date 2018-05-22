@@ -16,7 +16,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Contenido" runat="server">
    
-    <div class="row">
+   <%-- <div class="row">
         <div class="col-lg-4">
                   <div class="panel widget bg-default" style="height:145px;" id="temporizadorSubasta">
                       <div class="row row-table">
@@ -50,7 +50,7 @@
                    </a>
             </div>
          </div>
-    </div>
+    </div>--%>
      <div class="row">
            
        

@@ -202,7 +202,7 @@ function obtenerContadorOfertas()
         success: function (result)
         {
             var total = result.d;
-            $("#ofertas").text(total);
+            $("#numeroOfertas").text(total);
         },
 
         error: function (error)
